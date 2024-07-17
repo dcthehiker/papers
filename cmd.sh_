@@ -1,0 +1,2 @@
+# list all html
+ll | grep html | perl -lane 'print "@F[8..$#F]"'
