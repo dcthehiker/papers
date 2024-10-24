@@ -1,193 +1,723 @@
-
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Limitations of Embodied Theory and the Representational pluralism</title>
-        <style>
-            * {
-              padding: 0;
-              margin: 0;
-              box-sizing: border-box;
-            }
-             html {
-              line-height: 1.15; /* 1 */
-              -webkit-text-size-adjust: 100%; /* 2 */
-            }
-            body {
-              padding: 20px;
-              margin: 0;
-            }
-            main {
-              display: block;
-            }
-            h1 {
-              font-size: 2em;
-              margin: 0.67em 0;
-            }
-            hr {
-              box-sizing: content-box; /* 1 */
-              height: 0; /* 1 */
-              overflow: visible; /* 2 */
-            }
-            pre {
-              font-family: monospace, monospace; /* 1 */
-              font-size: 1em; /* 2 */
-            }
-            a {
-              background-color: transparent;
-            }
-            abbr[title] {
-              border-bottom: none; /* 1 */
-              text-decoration: underline; /* 2 */
-              text-decoration: underline dotted; /* 2 */
-            }
-            b,
-            strong {
-              font-weight: bolder;
-            }
-            code,
-            kbd,
-            samp {
-              font-family: monospace, monospace; /* 1 */
-              font-size: 1em; /* 2 */
-            }
-            small {
-              font-size: 80%;
-            }
-            sub,
-            sup {
-              font-size: 75%;
-              line-height: 0;
-              position: relative;
-              vertical-align: baseline;
-            }
-            sub {
-              bottom: -0.25em;
-            }
-            sup {
-              top: -0.5em;
-            }
-            img {
-              border-style: none;
-            }
-            button,
-            input,
-            optgroup,
-            select,
-            textarea {
-              font-family: inherit; /* 1 */
-              font-size: 100%; /* 1 */
-              line-height: 1.15; /* 1 */
-              margin: 0; /* 2 */
-            }
-            button,
-            input { /* 1 */
-              overflow: visible;
-            }
-            button,
-            select { /* 1 */
-              text-transform: none;
-            }
-            button,
-            [type="button"],
-            [type="reset"],
-            [type="submit"] {
-              -webkit-appearance: button;
-            }
-            button::-moz-focus-inner,
-            [type="button"]::-moz-focus-inner,
-            [type="reset"]::-moz-focus-inner,
-            [type="submit"]::-moz-focus-inner {
-              border-style: none;
-              padding: 0;
-            }
-            button:-moz-focusring,
-            [type="button"]:-moz-focusring,
-            [type="reset"]:-moz-focusring,
-            [type="submit"]:-moz-focusring {
-              outline: 1px dotted ButtonText;
-            }
-            fieldset {
-              padding: 0.35em 0.75em 0.625em;
-            }
-            legend {
-              box-sizing: border-box; /* 1 */
-              color: inherit; /* 2 */
-              display: table; /* 1 */
-              max-width: 100%; /* 1 */
-              padding: 0; /* 3 */
-              white-space: normal; /* 1 */
-            }
-            progress {
-              vertical-align: baseline;
-            }
-            textarea {
-              overflow: auto;
-            }
-            [type="checkbox"],
-            [type="radio"] {
-              box-sizing: border-box; /* 1 */
-              padding: 0; /* 2 */
-            }
-            [type="number"]::-webkit-inner-spin-button,
-            [type="number"]::-webkit-outer-spin-button {
-              height: auto;
-            }
-            [type="search"] {
-              -webkit-appearance: textfield; /* 1 */
-              outline-offset: -2px; /* 2 */
-            }
-            [type="search"]::-webkit-search-decoration {
-              -webkit-appearance: none;
-            }
-            ::-webkit-file-upload-button {
-              -webkit-appearance: button; /* 1 */
-              font: inherit; /* 2 */
-            }
-            details {
-              display: block;
-            }
-            summary {
-              display: list-item;
-            }
-            [hidden] {
-              display: none;
-            }
-             table {
-                border-collapse: collapse;
-                width: 100%;
-                margin-top: 20px;
-                margin-bottom: 20px;
-              }
-              table thead {
-                background-color: #e5e5e5;
-              }
-              table td {
-                padding: 8px;
-                /*background-color: #e5e5e5;*/
-                border: 1px solid #ccc; /* 可选，添加边框样式 */
-              }
-              table th {
-                padding: 8px;
-                /*background-color: #e5e5e5;*/
-                border: 1px solid #ccc; /* 可选，添加边框样式 */
-              }
-              h1, h2, h3, h4, h5, h6 {
-                margin-bottom: 20px;
-              }
-              p {
-                margin-top: 20px;
-                text-indent: 2em;
-                margin-bottom: 20px;
-              }
-        </style>
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      </head>
-      <body>
-        <div><div class="relative cursor-pointer md-tranlate-menu-layout"></div><div data-page="1" id="mark-bd32fa8f-3c77-4845-8e09-2f7e0865b617" class="markdown-parser-view mb-5 relative cursor-pointer bg-theme-brand bg-opacity-10                border-dashed border-theme-brand border-2                border-opacity-70 rounded-md"><div style="height: auto;"><div><div><div>Limitations of Embodied Theory and the Representational pluralism Abstract</div></div></div><div><br></div><div><div><div>Since the mid to late 1970s, the traditional paradigm of cognitive theory has been increasingly questioned in the fields of philosophy, psychology, cognitive science, and artificial intelligence. With the rise of embodied cognition, psychologists have begun to understand conceptual representation in terms of embodiment, emphasizing the role of the subject's sensorimotor system and bodily experience in conceptual representation. Although there is a large body of empirical research to support the theory of embodied cognition, it still fails to provide a reasonable account of the representation of abstract concepts. Recent empirical studies have shown that concrete concepts and abstract concepts involve different forms of conceptual representation. Thus, it appears that the mechanism of concept representation is multiple. Although the multiple representation hypothesis has shown more plausibility and theoretical potential beyond the reach of embodied theory, there are still many problems with the theory that need further exploration.</div></div></div><div><br></div><div><div><div>Keywords: embodied cognition, abstract conceptual representation, metaphor, situation, representational pluralism</div></div></div></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="2" id="mark-4e3f8b82-094e-4d6a-af97-fa050502fe1e" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 1056px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="3" id="mark-6629e2be-358a-4527-951f-596a2419e9da" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 684px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="4" id="mark-e9036e3d-2507-4913-a00e-4a3c6cceaa22" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 792px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="5" id="mark-29668086-16d8-477c-a07d-5b1571c487ff" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 804px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="6" id="mark-be413080-e97e-4239-bcda-e662c6afc99b" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 936px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="7" id="mark-cc5b2dd8-bfe3-4dd5-87c3-9e5d34f69a70" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 672px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="8" id="mark-5088f1b8-d63f-4163-b1ef-4a6b291bf73b" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 876px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="9" id="mark-041968ac-fc7c-466f-8755-08f3c67e375e" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 600px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="10" id="mark-3f9ec3ef-abe6-4a4b-84c7-bdc1f3bf7ad2" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 912px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="11" id="mark-aa9401dd-1033-4aaa-a728-58f3dc1bc9c4" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="12" id="mark-3a188565-5a75-4e44-8b42-3a1622476bde" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="13" id="mark-71f3d585-eb9f-480f-809e-94a4a83f0683" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="14" id="mark-eadc40eb-a57b-43d9-a824-5c5daf94d829" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="15" id="mark-6aefe45a-6cfd-4ac4-bde8-46c0c195c7dc" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="16" id="mark-afe7135b-5eb4-4e79-9884-002f38d35e5a" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="17" id="mark-e9f769fa-bbda-4b18-9311-7e86b806d436" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="18" id="mark-9a56f319-cb67-461d-9bf2-d2d6268006bb" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="19" id="mark-a2bd5304-a62c-4bd2-8be8-1f916ead3825" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="20" id="mark-e0f0ed70-8fe6-4da9-b8ad-ee8dd1d1fcda" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="21" id="mark-6f2930ec-f2b9-486f-ac06-84f48d919ec7" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="22" id="mark-9f5f176b-6dbc-42e9-baf1-a82515b95296" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="23" id="mark-37cce8d5-8282-4c5b-8952-d66410187c16" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="24" id="mark-2f9971e0-a40c-49d1-8aaa-7095d5b70086" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="25" id="mark-a808d73d-38ec-4378-8617-4d900dea3ccd" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="26" id="mark-5d87a0f1-da99-47bb-b441-d62c176bf269" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="27" id="mark-cf338b04-3d8c-4986-a517-6eee4a7a38ef" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div><div><div class="relative cursor-pointer md-tranlate-menu-layout"><div data-page="28" id="mark-9305c88e-fa69-4f71-890a-a833a4b77b22" class="markdown-parser-view mb-5 relative cursor-pointer"><div style="height: 100px;"></div></div></div></div>
-      </body>
-    </html>
-  
+<p>Limitations of Embodied Theory and the Representational pluralism
+Abstract</p>
+<p>Since the mid to late 1970s, the traditional paradigm of cognitive
+theory has been increasingly questioned in the fields of philosophy,
+psychology, cognitive science, and artificial intelligence. With the
+rise of embodied cognition, psychologists have begun to understand
+conceptual representation in terms of embodiment, emphasizing the role
+of the subject’s sensorimotor system and bodily experience in conceptual
+representation. Although there is a large body of empirical research to
+support the theory of embodied cognition, it still fails to provide a
+reasonable account of the representation of abstract concepts. Recent
+empirical studies have shown that concrete concepts and abstract
+concepts involve different forms of conceptual representation. Thus, it
+appears that the mechanism of concept representation is multiple.
+Although the multiple representation hypothesis has shown more
+plausibility and theoretical potential beyond the reach of embodied
+theory, there are still many problems with the theory that need further
+exploration.</p>
+<p>Keywords: embodied cognition, abstract conceptual representation,
+metaphor, situation, representational pluralism</p>
+<h2
+id="limitations-of-embodied-theory-and-the-representational-pluralism">Limitations
+of Embodied Theory and the Representational pluralism</h2>
+<p>Concepts are the basic elements of people’s cognitive abilities such
+as dialogue, reasoning, and imagination. Traditional cognitive theory,
+popular in the 1950s and 1960s, argued that the conceptual
+representation of objects by subjects was achieved through amodal
+abstract symbols. Abstract symbols represent conceptual content, which
+has a one-to-one correspondence with linguistic concepts. For example,
+the presence of the abstract symbol “hammer” in the brain allows people
+to understand the meaning of the word “hammer” when they read it. This
+view of conceptual representation is based on mind-body dualism, which
+sees the cognitive process as a mere process of processing information
+and computing abstract symbols, unrelated to the subject’s sensorimotor
+system.</p>
+<p>Since the mid to late 1970s, the traditional paradigm of cognitive
+theory has been increasingly questioned in the fields of philosophy,
+psychology, cognitive science, and artificial intelligence. With the
+rise of embodied cognition, psychologists have begun to understand
+conceptual representation in terms of embodiment, emphasizing the role
+of the subject’s perceptual system and bodily experience in conceptual
+representation. Although there is a large body of empirical research to
+support the theory of embodied cognition, it still fails to provide a
+reasonable account of the representation of abstract concepts. Recent
+empirical studies have shown that concrete concepts and abstract
+concepts involve different forms of conceptual representation. Thus, it
+appears that the mechanisms of concept representation are multiple. In
+this essay, I will attempt to introduce and analyze embodied cognitive
+theories and show that embodied cognitive theories cannot provide an
+accurate explanation of abstract conceptual representations. The
+limitations of the embodied theory suggest that the subject’s conceptual
+system may have multiple representational mechanisms. By sorting through
+theoretical and experimental studies related to multiple
+representations, I will argue for the plausibility of the multiple
+representation hypothesis. Finally, I will point out the current
+problems of multiple representation research and the directions that
+future research can focus on.</p>
+<h2
+id="limitations-of-embodiment-theory-in-explaining-conceptual-representations-the-embodiment-hypothesis-of-conceptual-representation">Limitations
+of Embodiment Theory in Explaining Conceptual Representations The
+Embodiment Hypothesis of Conceptual Representation</h2>
+<p>Embodied cognition is a new orientation in current cognitive
+psychology research. Based on the Cartesian mind-body dualism,
+traditional cognitivism sees human cognitive activity as the arithmetic
+of abstract symbols. Human cognitive abilities such as thinking,
+reasoning, and conceptual representation belong to the realm of the mind
+which is separate from the subject’s sensorimotor experience. Cognitive
+processes can take place through any appropriate medium, such as an
+adapted physical device or a biological brain. However, influenced by
+Merleau-Ponty’s phenomenology of perception, the mind-body dualism was
+gradually questioned. On this basis, embodied cognition theory argues
+that computation is not the only way of cognition. Human cognitive
+activity is closely related to the interaction between the body and the
+environment in which it is embedded. Because the brain is always the
+brain in the body, the body is always the body in the environment. The
+cognitive system is an organic wholeness consisting of the brain, the
+body, and the environment.</p>
+<p>Within the perspective of embodied cognition research, numerous
+researchers have proposed hypotheses about the embodiment of conceptual
+representations. These theories agree on the basic view of conceptual
+representation: concepts are formed through the body’s perceptual
+experiences of the world and can only be understood through these
+perceptual experiences. A conceptual representation is not a separate
+abstract symbol or mental representation, but a neural representation, a
+perceptual, motor, and introspective experience that arises when a
+subject experiences an object. Fundamentally, humans physically know the
+world. Thus, the essence of conceptual representation is the storage of
+perceptual experience.</p>
+<p>The embodied hypothesis of conceptual representation is supported by
+a large body of experimental evidence. Conceptual processing triggers
+changes in bodily sensorimotor states. For example, when an individual
+reads or judges a word, the cerebral cortex associated with the
+conceptual content is rapidly activated (Goldberg, Perfetti, &amp;
+Schneider, 2006), and the body’s motor state changes accordingly (Bub,
+Masson, &amp; Cree, 2008). On the other hand, changes in the physical
+properties of the body can also have an impact on conceptual processing.
+These studies demonstrate that the subject’s sensorimotor system
+provides the neural basis for conceptual processing and that conceptual
+representations are rooted in the sensorimotor system of the subject’s
+body. These studies demonstrate that the subject’s sensorimotor system
+provides the neural basis for conceptual processing. These studies
+demonstrate that the subject’s sensorimotor system provides the neural
+basis for conceptual processing. Conceptual representations are rooted
+in the sensorimotor system of the subject’s body.</p>
+<p>Three Theories of the Embodied Cognition Hypothesis and Their
+Limitations Within the perspective of embodied cognition research,
+numerous researchers have proposed embodied theories about conceptual
+representation. I will specifically analyze three main theories and
+point out that each of these three embodied cognition theories has its
+specific shortcomings. They are unable to provide a satisfactory
+explanation for the problem of abstract conceptual representation.</p>
+<h2 id="cognitive-metaphor-theory">Cognitive Metaphor Theory</h2>
+<p>Lakoff and Johnson (1980) proposed the Cognitive Metaphor Theory
+based on the analysis and study of many metaphors. Metaphor is an
+approach in which people use tangible, concrete, and simple source
+domain concepts (e.g., space, temperature, action, etc.) to express and
+understand invisible, abstract, and complex target domain concepts
+(e.g., morality, psychological feelings, social relations, etc.), thus
+enabling abstract thinking. (p. 252-253). In other words, Cognitive
+Metaphor Theory suggests that people express and understand abstract
+concepts through concrete concepts. The main ideas of the theory can be
+summarized in the following three points.</p>
+<p>Firstly, there is a process of metaphorical mapping from concrete
+concepts to abstract concepts. Metaphorical mapping is the “scaffolding”
+of the schema structure of concrete experience onto abstract categories
+and relations. Through metaphorical mapping, people acquire new
+knowledge and understanding. This scaffolding mechanism corresponds to
+some of the most basic cognitive characteristics of humans. ( Williams,
+Huang, &amp; Bargh, 2009)</p>
+<p>Secondly, the process by which abstract concepts are scaffolded by
+concrete concepts is not only linked at the level of words but also to
+the level of mental representations. For an abstract concept that cannot
+be perceived with bodily experience, one maps a concrete concept linked
+to a sensorimotor system, thus constructing the intrinsic logical
+structure of the abstract concept with the schema structure of the
+concrete concept, and this perceptual experience associated with the
+concrete concept is a necessary part of the representation of the
+abstract concept. (Landau, Meier, &amp;Keefer, 2010).</p>
+<p>Thirdly, in the process of understanding abstract concepts, the
+subject has a perceptual experience. When people learn abstract concepts
+or think abstractly, not only do they understand abstract concepts based
+on concrete concepts, but the perceptual experiences associated with
+concrete concepts are also activated. At this point, the subject will
+process the abstract concept experientially. “No matter how complex an
+abstract concept is, it necessarily becomes associated with a bodily
+part. People’s experience is limited to what the body can experience and
+conceptualize abstract concepts based on bodily experience.” (Lakoff
+&amp; Johnson, 1999).</p>
+<p>The basic assumptions of Cognitive Metaphor Theory are supported by
+many experiments. However, although metaphors can be used to mediate the
+connection between perceptual actions and abstract concepts, this does
+not mean that abstract conceptual representations are based exclusively
+on bodily experience. Cognitive Metaphor Theory emphasizes the use of
+concrete conceptual structures associated with perceptual categories to
+represent abstract conceptual structures, rather than the abstract
+concepts themselves. Thus, the theory does not deny the existence of
+independent representations. Subjects can process abstract categories
+more figuratively through metaphorical mechanisms, but the relevant
+sense perceptual representations do not cover the full meaning of an
+abstract concept.</p>
+<p>Furthermore, Cognitive Metaphor Theory cannot answer the question of
+the specific mechanisms of the metaphorical mapping process. Cognitive
+Metaphor Theory only examines the cognitive impact of changes in a
+single perceptual experience. People will use the same concrete concept
+to construct multiple abstract concepts. For example, the concept of ‘up
+and down’ is metaphorically mapped to several abstract concepts such as
+‘status’, ‘power’, and ‘taste’. People also use several concrete
+concepts to construct an abstract concept. For example, there is a
+metaphorical mapping between the abstract concept of ‘morality’ and
+several concrete concepts such as ‘pure-dirty’, ‘up-down’, and
+‘light-dark’. These phenomena suggest that in constructing abstract
+concepts, people do not simply use a single perceptual channel, but may
+engage in multiple channels of information processing.</p>
+<p>Finally, Cognitive Metaphor Theory suggests that metaphorical
+mappings are unidirectional, i.e., the processing of abstract concepts
+by perceptual experience is unidirectional. Some experiments support
+this view (Casasanto &amp; Boroditsky, 2008): changes in spatial stimuli
+only affect judgments of temporal distance in a unidirectional manner.
+However, experiments demonstrating that metaphorical mappings are
+bidirectional also exist. For example, temperature experience and social
+interpersonal effect are mutually influential (Williams &amp; Bargh,
+2008).</p>
+<h2 id="perceptual-symbol-system-theory">Perceptual Symbol System
+Theory</h2>
+<p>In the early days of cognitive psychology, the propositional symbolic
+theory was the dominant theory for explaining the representation of
+knowledge. The theory considered propositions to be the material that
+constitutes cognition, and that propositions are interconnected to form
+propositional networks in the human brain. Is linguistic understanding a
+manipulation of abstract symbols, or is it rooted in perception and
+behavior? There is no agreement between different theories on this
+question (Rolf, 2014).</p>
+<p>Barsalou (1999) challenged propositional symbol theory by proposing
+Perceptual Symbol System Theory based on Cognitive Metaphor Theory. The
+theory challenges the non-modal cognitive theory by using perceptual
+symbols to explain how behavior and cognition are realized in the brain
+(Pezzulo &amp; Calvi, 2011).</p>
+<p>Perceptual Symbol Systems Theory places particular emphasis on the
+role of situational factors in conceptual representation. They argue
+that the subject’s knowledge of an object is not abstract and completely
+out of context but is acquired in a situational context. Thus, the
+subject represents conceptual knowledge in a situated way. There is no
+direct relationship between what the abstract concept refers to and the
+subject’s perceptual system, but the situational experience associated
+with the abstract concept, such as behavior, action, emotion,
+introspective experience, etc., can be used as a perceptual
+representation of the abstract concept, which is the embodiment of the
+abstract conceptual representation (Barsalou, 2005; Prinz, 2005).
+Namely, concrete concepts involve direct perceptual representations,
+while abstract concepts involve indirect perceptual representations
+based on situational experiences. The basic contents of the theory can
+be summarized in the following five points.</p>
+<p>Firstly, Perceptual symbols are the result of neural representations
+in the sensory-motor areas of the brain, which are the materials that
+constitute cognition. The brain processes things in the objective
+environment typically situated and then internalizes them as perceptual
+symbols.</p>
+<p>Second, the transition from lower to higher cognition is made by
+simulators in long-term memory. Simulators consist of perceptual symbols
+and their frames, which are used by the subject to simulate the object
+world when perceiving it, thus enabling the perception of the external
+world.</p>
+<p>Thirdly, people select perceptual symbols from external objects
+through selective attention and store pictorial representations of
+perceptual objects in long-term memory. Since attention selects only a
+part of the external object, perceptual symbols represent only part of
+the perceptual experience, but not the whole perceptual experience.</p>
+<p>Fourthly, perceptual symbols are muti-modal and come from different
+sensory channels (visual, auditory, olfactory, gustatory, etc.). There
+are different types of cognition, and different types of cognition
+require different simulations for their implementation.</p>
+<p>Fifth, the relationship between external referents and perceptual
+symbols has an important role in the simulation process. In perceiving
+the world, the subject needs not only the participation of the object
+but also the environment. The environment is processed in the simulation
+system to form situated conceptualizations that assist the subject in
+processing the object.</p>
+<p>Perceptual Symbol Systems Theory has had a significant impact on a
+wide range of disciplines, but it also faces many unresolved issues.</p>
+<p>Firstly, not all abstract concepts are situated in a particular
+context, for example, “therefore” “category”. It is difficult to
+demonstrate how these abstract concepts are grounded in situated
+experience. Situational information is also insufficient to represent
+the true meaning of an abstract concept. Situated relevant perceptual
+experiences may only be part of the abstract conceptual
+representation.</p>
+<p>Second, there is a considerable amount of experimental evidence for
+the existence of perceptual symbols, but there is also a large body of
+research demonstrating that propositional symbols are also present in
+cognitive processes. So how do perceptual and propositional symbols
+relate to each other? Do they exist at the same stage of processing? Do
+the main types of representations differ between the different stages of
+processing?</p>
+<p>Finally, it is not clear how perceptual symbols are acquired.
+Perceptual symbol theory suggests that people acquire concrete concepts
+through early sensorimotor experiences. However, research has shown that
+infants also use perceptual symbols in their cognitive processing. This
+would imply that perceptual symbols do not come from early experience.
+So, how do perceptual symbols get acquired? Are they acquired through
+genetics, learning, or some other form of encoding? Simulating
+Sensorimotor Metaphor Theory</p>
+<p>Piaget (1962) has long regarded simulation as part of cognitive
+development and as a necessary way of learning new actions and
+knowledge. The most influential studies on mental simulation in recent
+years are Meltzoff’s Theory-Theory and Goldman’s Simulation Theories
+(Newen &amp; Schlicht, 2009). Theory-Theory (Melzoff, 1999) emphasizes
+the causal relationship between simulation and mental understanding,
+which means that simulation is a prerequisite for psychological
+understanding. Goldman’s Simulation Theory (1992) suggests that people
+understand the intentions, desires, emotions, attitudes, and beliefs of
+others by using their mental mechanisms to imitate the mental activities
+of others.</p>
+<p>The discovery of mirror neurons provided the neurobiological basis
+for embodied cognition and mental simulation theory. Subsequent fMRI and
+TMS studies have revealed the existence of mirror neural mechanisms in
+the cortex of the human brain. Based on empirical evidence from
+neurobiology, as well as Cognitive Metaphor Theory and Perceptual Symbol
+Theory, Slepian and Ambady (2014) proposed Simulating Sensorimotor
+Metaphor Theory (SSM).</p>
+<p>The SSM model adds mainly to the two previous theories as follows.
+Firstly, there is a strong link between bodily sensory movement and
+understanding and judging abstract concepts. Not only can the concrete
+domain influence the abstract domain, but the abstract domain can also
+influence the concrete domain. In other words, metaphorical mapping has
+a two-way effect. Secondly, metaphors are acquired through later
+learning, rather than through early experience. Thirdly, early
+experience is not necessary for learning new metaphors. Even when
+learning new embodied metaphors in the absence of early experience,
+people can make associations between physical and mental states.</p>
+<p>Many of the ideas about the theory still lack empirical support, and
+three major issues need to be addressed.</p>
+<p>First, do metaphors under different cultural contexts or knowledge
+schema affect metaphorical outcomes? Casasanto (2008) found that there
+are differences in the representation of the concept of time among
+people who speak different languages. For example, Greeks would
+metaphorically refer to time spacing as spatial capacity and would say
+“time is full”. The British would metaphorically refer to time spacing
+as spatial length and would say “time is long”.</p>
+<p>Secondly, do metaphorical processes affect the sensorimotor system?
+The metaphor “secrets are heavy” exists in a particular culture.
+Experiments designed based on this metaphor have shown that asking the
+participants of this culture to recall their secrets leads to a bias in
+their judgment of the weight of objects. The specific mechanisms by
+which metaphorical processes affect the sensorimotor system need to be
+further investigated.</p>
+<p>Thirdly, are there different ways in which metaphors are acquired?
+Although some experiments have demonstrated that metaphors are acquired
+through later learning, these experiments have been established under
+artificial manipulation conditions and do not prove that all metaphors
+are linked through learning. Perhaps different types of metaphor
+correspond to different pathways of acquisition. Representational
+pluralism: A New Assumption on Conceptual Representation Mechanism</p>
+<p>The dilemma of embodied cognitive theory regarding abstract
+conceptual representation suggests that perceptual-experiential
+representations are not the only form of conceptual representation.
+Subjects’ representations of conceptual knowledge may take plural forms.
+This assumption removes the dichotomy between embodied representation
+and non-modal symbolic representation. The presence of abstract symbolic
+representations allows the human conceptual system to function better
+and to meet different representational processing needs: concrete
+concepts related to a particular bodily experience rely on perceptual
+experiential representations. Abstract concepts that are not related to
+bodily experience rely on abstract symbolic representations.</p>
+<h2
+id="empirical-studies-related-to-the-representational-pluralism">Empirical
+studies related to the Representational pluralism</h2>
+<p>Considered from a theoretical perspective, the Multiple
+Representation Hypothesis could address the problem of abstract
+conceptual representation. Some current empirical findings have also
+found that different types of conceptual knowledge are stored
+differently in the brain, which likely implies that concrete and
+abstract concepts involve different representations. I will next present
+evidence from different levels of empirical research to provide support
+for the multiple representation hypothesis.</p>
+<h2 id="evidence-from-pathology-studies">Evidence from Pathology
+Studies</h2>
+<p>Pathological studies have found that patients with aphasia suffer
+from lexical dissociation in which the patient loses verbal processing
+but not noun processing (Crepaldi et al., 2006). Further research has
+found that when lexical imageability is added to the analysis, the
+patient’s verbal aphasia is not present (Bird, Howard, &amp; Franklin,
+2003). These cases suggest that these patients are unable to understand
+and process verbs because their ability to visualize concrete words is
+impaired.</p>
+<p>Correspondingly, studies have also found a separation effect between
+the processing of intuitively imaginable words (concrete concepts) and
+non-intuitively imaginable words (abstract concepts) in some
+brain-injured patients. For example, Marshall, Pring, Chiat, and Robson
+(1996) reported a case of a patient with delayed aphasia. He was able to
+use and understand abstract nouns with normal fluency but had difficulty
+understanding concrete nouns and verbs, especially verbs with
+significant perceptual features.</p>
+<p>The lexical dissociation seen in brain-injured patients suggests that
+concrete and abstract concepts have different representational
+mechanisms and involve different brain areas.</p>
+<h2 id="evidence-from-cognitive-neuroscience-research">Evidence from
+Cognitive Neuroscience Research</h2>
+<p>Brain imaging studies have demonstrated that the processing of
+concrete and abstract concepts activates different brain areas.
+Rüschemeyer, Brass, and Friederici (2007) found that the premotor
+cortex, motor cortex, and somatosensory cortex were more strongly
+activated for the processing of concrete verbs than for abstract
+verbs.</p>
+<p>Sabsevitz, Medler, Seidenberg, and Binder (2005) found that the
+processing of abstract nouns more strongly activated the left superior
+temporal cortex and the left inferior prefrontal cortex, which are
+associated with semantic processing, than concrete nouns. This
+conclusion is consistent with the multiple representation hypothesis:
+concrete concepts rely on perceptual experience representations and
+abstract concepts rely on symbolic representations. Jirak, Menz,
+Buccino, Borghi, and Binkofski (2010) also demonstrated that some brain
+areas associated with physical actions (e.g., insula) were more strongly
+activated when subjects heard sentences consisting of concrete actions
+with concrete nouns. When subjects heard sentences consisting of
+abstract actions and abstract nouns, brain areas associated with
+language processing (e.g., the supramarginal gyrus) were more strongly
+activated. In addition, Ghio and Tettamanti (2010) demonstrated that the
+sensorimotor areas of the left hemisphere were more significantly
+activated when subjects heard concrete sentences. When subjects heard
+abstract sentences, brain areas such as the posterior pressure cortex
+and cingulate cortex were more significantly activated.</p>
+<p>Although the results obtained from different experiments are not
+entirely consistent due to various factors, almost all studies show that
+conceptual representations take different forms, one associated with
+sensorimotor areas and the other with language areas.</p>
+<p>In addition to brain imaging studies, ERP studies have demonstrated
+that concrete concept processing is associated with greater wave
+amplitude in the N400 Component of the brain (Huang, Lee, &amp;
+Federmeier, 2010; Lee &amp; Federmeier, 2008).</p>
+<p>Duñabeitia (2009), on the other hand, demonstrated that presenting
+subjects with concrete concepts and abstract concepts triggered
+different eye movement patterns when presented to subjects.</p>
+<h2 id="evidence-from-behavioral-research">Evidence from Behavioral
+Research</h2>
+<p>Behavioral research has proven that subjects’ representations of
+concrete and abstract concepts may involve different representational
+systems. In an experiment by Scorolli et al. (2011), the researchers
+created four different combinations of phrases using the same transitive
+verb and noun (1. concrete verb + concrete noun; 2. concrete verb +
+abstract noun; 3. abstract verb + concrete noun; 4. abstract verb +
+abstract noun.) and present the phrases in the center of the screen.
+Subjects were asked to judge as quickly as possible whether the
+presented sentences had real meaning, and the judgments and response
+durations were automatically recorded. The study found that, after
+eliminating irrelevant factors, the response time for sentences
+consisting of all concrete words or all abstract words was less than
+that for sentences consisting of mixed words. The researchers suggest
+that this is since concrete and abstract words activate different
+processing systems. The concrete vocabulary activates the perceptual
+representation system, while the abstract vocabulary activates the
+semantic representation system. Phrases with different types of lexical
+combinations trigger the involvement of different processing systems and
+therefore require longer response times.</p>
+<p>Borghi et al. (2011) simulated in an experiment the process of
+individual</p>
+<p>knowledge representation of novel concrete and abstract concepts. In
+the first phase of the experiment, the researcher presented several 3D
+pictures to the subjects. One part of the pictures represented concrete
+concepts; the content of these pictures was novel shapes, each series of
+which was shaped according to concrete, fixed rules, such as a fixed
+color, number of prongs, etc. The other part of the pictures represents
+abstract concepts; the content of these pictures reflects the abstract
+dynamic relationships between objects. The dynamic relationships of each
+series of pictures are also shaped according to a fixed order of
+relationships, e.g., two objects are first separated, then brought
+together in a horizontal position, and then separated at different
+angles. Subjects were able to manipulate the <span
+class="math inline">3D</span> graphics with the mouse while watching the
+dynamic pattern of object relationship transitions. In a subsequent
+test, the researcher presented the subjects with paired graphics or
+pictures that reflected abstract relationships, and the subjects were
+asked to determine whether the paired stimuli presented belonged to the
+same category based on their learning in the previous phase. The second
+phase of the experiment was the language learning phase. The researcher
+presented the subjects with pictures of figures or dynamic
+relationships, told them the names of the categories of these novel
+figures or dynamic relationships, and explicitly explained to them the
+rules for constructing these figures or dynamic relationships. After
+this, the same test as in the first phase was completed.</p>
+<p>It was found that in both tests, the subjects performed better on the
+judgment of graphs than on the judgment of relations, indicating that
+the learning of abstract concepts was more difficult. In addition, after
+the second stage of language learning of abstract concepts, the
+subjects’ judgment of relational stimuli (abstract concepts) was higher.
+In other words, learning abstract concepts through language was more
+effective.</p>
+<p>The researcher concluded that the above results suggest that the</p>
+<p>conceptualization of concrete concepts is mainly achieved through
+perceptual</p>
+<p>experience, while the conceptualization of abstract concepts is
+mainly achieved</p>
+<p>through language learning.</p>
+<h2
+id="theories-related-to-the-multiple-representation-hypothesis">Theories
+related to the Multiple Representation Hypothesis</h2>
+<p>Abstract and concrete concepts are fundamentally different in their
+conceptual nature, and a single representational mechanism cannot meet
+the needs of conceptual representation. Evidence from pathology,
+cognitive neuroscience, and behavioral research all suggest that
+different representational mechanisms exist in the human conceptual
+system.</p>
+<p>In theoretical research, hypotheses related to the multiple
+representation mechanisms can be traced back to the Dual Coding Theory
+(Paivio, 1991). This theory suggests that there is a language-based
+representation system and an image-based representation system in the
+human conceptual cognitive system. These two representational mechanisms
+function according to different needs. For figurative concepts,
+perceptual and linguistic coding are jointly involved in conceptual
+representation. For concepts that are not figurative, only linguistic
+coding is involved in conceptual representation.</p>
+<p>The Words As Tools (WAT) hypothesis (Borghi &amp; Cimatti, 2010)
+suggests that knowledge representation of concrete concepts can be
+acquired through perceptual experience, whereas knowledge representation
+of abstract concepts requires the involvement of linguistic functions.
+Andrew, Vigliocco, and Vinson (2009) also argue that conceptual
+representation involves two forms. One is experiential, which relates to
+basic perceptual experience, and the other is distributional, which
+relates to abstract symbolic processing.</p>
+<p>In addition, some proponents of embodied conceptual representations
+have revised their theories. For example, Barsalou (2008) proposed the
+Language And Situated Simulation (LASS) theory, which argues that the
+human conceptual system has a flexible dual processing mechanism. Among
+them, the Situated Simulation processing mechanism associated with
+perceptual experience is the basic form of conceptual representation.
+The Symbol Interdependency Theory (Louwerse, 2010) presents a similar
+argument in favor of multiple representations.</p>
+<h2 id="theory-and-research-outlook">Theory and Research outlook</h2>
+<p>The dilemma of the embodied cognition hypothesis in explaining the
+abstract conceptual representation suggests that there is not just a
+single mechanism of perceptual representation in the human conceptual
+system. The dissociation effect between the processing of concrete and
+abstract concepts suggests that there are different representational
+mechanisms in the human brain. Current empirical and theoretical
+research on multiple representation mechanisms is not yet mature enough.
+In future research, we can make further explorations on the following
+issues.</p>
+<ol type="1">
+<li>In the presence of abstract symbolic representations, what is the
+relationship between perceptual and symbolic processing mechanisms in
+conceptual representations? Research on apraxia suggests that abstract
+symbolic processing mechanisms are present in concrete conceptual
+representations. The processing of concepts does not always require the
+involvement of perceptual experience (Negri et al., 2007). When
+presented with a hammer, a person with apraxia is unable to recall and
+demonstrate the action of wielding or striking the hammer, or to
+describe its use, but can point out that the tool is a hammer and recall
+that the object associated with it is a nail. This suggests that with
+the loss of the sensorimotor experience about the thing, the individual
+retains a concept of the thing. In this case, people are conceptually
+representing objects in terms of abstract symbols. Thus, abstract
+symbols are also involved in the process of representing concrete
+concepts. Furthermore, studies on metaphor show that perceptual
+experience is also involved in the representation of abstract concepts.
+This suggests that there are multiple representation mechanisms involved
+in the representation of both concrete and abstract concepts, but that
+different representational mechanisms occupy different positions in
+different situations. So how do these two mechanisms relate to each
+other in the process of conceptualization?</li>
+</ol>
+<p>One possibility is that the two mechanisms are completely independent
+in the representation of knowledge because they have different neural
+and physiological bases and are at different stages in evolution (the
+symbolic mechanism is at a more advanced stage). Another possibility is
+that there is a complex interaction between the abstract symbols that
+represent conceptual knowledge and perceptual experience. Perhaps
+abstract symbolic information and perceptual information are just
+different levels of conceptual representation, and the two have a
+superior-subordinate relationship. It has been shown that the
+information provided by semantics is sufficient to help individuals with
+some of the simpler conceptual understanding and processing tasks. It is
+only when individuals need to make a complete understanding of certain
+concepts that the conceptual processing processes associated with
+perception are initiated (Connell and Lynott, 2011). This effect
+suggests the possibility that abstract symbols represent the essential
+meaning of concepts, while perceptual movements enrich the content of
+conceptual representations (Mahon and Caramazza 2008).</p>
+<p>The above hypotheses are not yet supported by sufficient empirical
+evidence. Therefore, future research needs to explore the relationship
+between various representational mechanisms to construct more complex
+and detailed models of conceptual representation. Clarifying the
+necessity of perceptual and symbolic representations for conceptual
+meaning and specifying the status and role of different representations
+in the conceptualization process will be an important direction for
+future research.</p>
+<ol start="2" type="1">
+<li>The existence forms of abstract symbols is also a highly
+controversial issue. Abstract symbolic representation is related to
+language, and many multiple representation theories also involve
+linguistic factors. So, what exactly is the relationship between
+language and the symbols that represent meaning? Barsalou’s Language And
+Situated Simulation Theory (LASS) states that subjects can represent
+conceptual knowledge through linguistic forms such as word
+frequency,</li>
+</ol>
+<p>word order, semantic networks, and lexical associations, but that
+independent language itself does not have any meaning. This view
+effectively denies the existence of abstract symbols. However, the
+traditional theory of non-modal symbolic representation holds that
+subjects can form an abstract, symbolic knowledge of things. Language is
+a bridge between meaningful symbols and objective things, which is
+“symbols of symbols”. If this hypothesis is valid, then we need to
+answer a series of more complex questions, such as where do abstract
+symbols come from? How are abstract symbolic representations stored? How
+do abstract symbols relate to language? There is also the view that
+language itself is an abstract symbol that represents meaning.
+Initially, language was only an external, object-referencing symbol. As
+the genealogy evolved and the individual developed, people gradually
+acquired unique higher cognitive abilities such as abstract thinking,
+reasoning, and imagination, and were able to construct further abstract
+and complex conceptual systems based on simple concrete concepts. In
+this process, external, symbolic, and formal language is gradually
+internalized into symbols that represent meaning (Dove, 2011). 40
+Although this view addresses the question of what abstract symbols are,
+it is too macro and abstract, lacks clarity in theoretical detail, and
+still lacks an explanation for many concrete issues.</p>
+<p>Therefore, research into the form of existence, evolutionary
+processes, and physiological basis of abstract symbols will be another
+focus of future research.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Each of the three main embodied cognition theories offers its
+explanatory solution to the problem of abstract conceptual
+representation, but each has its shortcomings, so embodied cognitive
+theories cannot provide satisfactory answers to abstract conceptual
+representation.</p>
+<p>Where embodied theories fail, empirical evidence from pathology,
+neurobiology, and behavioral research has shown us the great potential
+of the multiple representation hypothesis. Exploring the relationships
+between different representational mechanisms and constructing more
+nuanced representational models will be the focus of future
+research.</p>
+<p>Furthermore, I would like to point out that since many studies of
+multiple representations are concerned with semantic understanding,
+perhaps embodied cognition theory and the multiple representation
+hypothesis could try to cooperate and draw on each other’s theoretical
+ideas to open a space for ‘embodied semantic understanding’. In the
+Phenomenology of Perception, Merleau-Ponty (1962) points out that speech
+is ultimately a bodily gesture, a construct of the bodily subject.
+Therefore, semantic understanding takes place in the subject’s body, and
+the subject’s experience is involved in the process of semantic
+understanding, making the meanings derived from semantic understanding
+more meaningful for the subject. Based on Merleau-Ponty’s philosophical
+resources, embodied cognition may truly move beyond the idea of
+mind-body dualism, rather than merely reducing traditional cognitive
+theories to the bodily level.</p>
+<h2 id="references">References</h2>
+<p>Barsalou, L. W. (1999). Perceptual symbol systems. Behavioral and
+brain sciences, 22(4), 577-660. Barsalou, L. W., &amp; Wiemer-Hastings,
+K. (2005). Situating abstract concepts. Grounding cognition: The role of
+perception and action in memory, language, and thought, 129-163.</p>
+<p>Barsalou, L. W. (2008). Grounded cognition. Annu. Rev. Psychol., 59,
+617-645.</p>
+<p>Louwerse, M. M., &amp; Jeuniaux, P. (2010). The linguistic and
+embodied nature of conceptual processing. Cognition, 114(1), 96-104.</p>
+<p>Bird, H., Howard, D., &amp; Franklin, S. (2003). Verbs and nouns: The
+importance of being imageable. Journal of Neurolinguistics, 16(2-3),
+113-149.</p>
+<p>Borghi, A. M., &amp; Cimatti, F. (2010). Embodied cognition and
+beyond: Acting and sensing the body. Neuropsychologia, 48(3),
+763-773.</p>
+<p>Borghi, A. M., Flumini, A., Cimatti, F., Marocco, D., &amp; Scorolli,
+C. (2011). Manipulating objects and telling words: a study on concrete
+and abstract words acquisition. Frontiers in psychology, 2, 15.</p>
+<p>Bub, D. N., Masson, M. E., &amp; Cree, G. S. (2008). Evocation of
+functional and volumetric gestural knowledge by objects and words.
+Cognition, 106(1), 27-58.</p>
+<p>Casasanto, D., &amp; Boroditsky, L. (2008). Time in the mind: Using
+space to think about time. Cognition, 106(2), 579-593.</p>
+<p>Connell, L., &amp; Lynott, D. (2011). Modality switching costs emerge
+in concept creation as well as retrieval. Cognitive Science, 35(4),
+763-778.</p>
+<p>Crepaldi, D., Aggujaro, S., Arduino, L. S., Zonca, G., Ghirardi, G.,
+Inzaghi, M. G., …</p>
+<p>&amp; Luzzatti, C. (2006). Noun-verb dissociation in aphasia: The
+role of</p>
+<p>imageability and functional locus of the lesion. Neuropsychologia,
+44(1), 73-89.</p>
+<p>Dove, G. (2011). On the need for embodied and dis-embodied cognition.
+Frontiers in Psychology, 1, 242. Duñabeitia, J. A., Avilés, A., Afonso,
+O., Scheepers, C., &amp; Carreiras, M. (2009). Qualitative differences
+in the representation of abstract versus concrete words: Evidence from
+the visual-world paradigm. Cognition, 110(2), 284-292.</p>
+<p>Goldberg, R. F., Perfetti, C. A., &amp; Schneider, W. (2006).
+Perceptual knowledge retrieval activates sensory brain regions. Journal
+of Neuroscience, 26(18), 4917- 4921.</p>
+<p>Lakoff, G., &amp; Johnson, M. (2008). Metaphors we live by.
+University of Chicago Press, 252-253.</p>
+<p>Goldman, A. I. (1992). In defense of the simulation theory.</p>
+<p>Ghio, M., &amp; Tettamanti, M. (2010). Semantic domain-specific
+functional integration for action-related vs. abstract concepts. Brain
+and language, 112(3), 223-232.</p>
+<p>Huang, H. W., Lee, C. L., &amp; Federmeier, K. D. (2010). Imagine
+that! ERPs provide evidence for distinct hemispheric contributions to
+the processing of concrete and abstract concepts. NeuroImage, 49(1),
+1116-1123.</p>
+<p>Jirak, D., Menz, M. M., Buccino, G., Borghi, A. M., &amp; Binkofski,
+F. (2010). Grasping language-a short story on embodiment. Consciousness
+and cognition, 19(3), 711-720.</p>
+<p>Lakoff, G., Johnson, M., &amp; Sowa, J. F. (1999). Review of
+Philosophy in the Flesh: The embodied mind and its challenge to Western
+thought. Computational Linguistics, 25(4), 631-634.</p>
+<p>Landau, M. J., Meier, B. P., &amp; Keefer, L. A. (2010). A
+metaphor-enriched social cognition. Psychological Bulletin, 136(6),
+1045-1067.</p>
+<p>Lee, C. L., &amp; Federmeier, K. D. (2008). To watch, to see, and to
+differ: An event-related potential study of concreteness effects as a
+function of word class and lexical ambiguity. Brain and Language,
+104(2), 145-158.</p>
+<p>Mahon, B. Z., &amp; Caramazza, A. (2008). A critical look at the
+embodied cognition hypothesis and a new proposal for grounding
+conceptual content. Journal of physiology-Paris, 102(1-3), 59-70.</p>
+<p>Marshall, J., Pring, T., Chiat, S., &amp; Robson, J. (1996). Calling
+a salad a federation: An investigation of semantic jargon. Part 1-Nouns.
+Journal of Neurolinguistics, 9(4), 237-250.</p>
+<p>Merleau-Ponty, M., &amp; Smith, C. (1962). Phenomenology of
+perception (Vol. 26). London: Routledge.</p>
+<p>Negri, G. A., Rumiati, R. I., Zadini, A., Ukmar, M., Mahon, B. Z.,
+&amp; Caramazza, A.</p>
+<p>(2007). What is the role of motor simulation in action and object
+recognition?</p>
+<p>Evidence from apraxia. Cognitive neuropsychology, 24(8), 795-816.</p>
+<p>Newen, A., &amp; Schlicht, T. (2009). Understanding other minds: A
+criticism of</p>
+<p>Goldman’s Simulation Theory and an outline of the Person Model
+Theory.</p>
+<p>Grazer Philosophische Studien, 79(1), 209.</p>
+<p>Paivio, A. (1991). Dual coding theory: Retrospect and current status.
+Canadian</p>
+<p>Journal of Psychology/Revue canadienne de psychologie, 45(3),
+255.</p>
+<p>Andrews, M., Vigliocco, G., &amp; Vinson, D. (2009). Integrating
+experiential and</p>
+<p>distributional data to learn semantic representations. Psychological
+review, 116(3), 463.</p>
+<p>Pezzulo, G., &amp; Calvi, G. (2011). Computational explorations of
+perceptual symbol systems theory. New Ideas in Psychology, 29(3),
+275-297.</p>
+<p>Piaget, J. (1962). Play, Dreams, and Imitation in Childhood. New
+York: WW Norton,686-943.</p>
+<p>Prinz, J. J. (2005). The return of concept empiricism. In Handbook of
+categorization in cognitive science (pp. 679-695). Elsevier Science
+Ltd.</p>
+<p>Rüschemeyer, S. A., Brass, M., &amp; Friederici, A. D. (2007).
+Comprehending prehending: neural correlates of processing verbs with
+motor stems. Journal of cognitive neuroscience,19(5), 855-865.</p>
+<p>Sabsevitz, D. S., Medler, D. A., Seidenberg, M., &amp; Binder, J. R.
+(2005). Modulation of the semantic system by word imageability.
+Neuroimage, 27(1), 188-200.</p>
+<p>Scorolli, C., Binkofski, F., Buccino, G., Nicoletti, R., Riggio, L.,
+&amp; Borghi, A. M. (2011). Abstract and concrete sentences, embodiment,
+and languages. Frontiers in Psychology, 2, 227.</p>
+<p>Slepian, M. L., &amp; Ambady, N. (2014). Simulating sensorimotor
+metaphors: Novel metaphors influence sensory judgments. Cognition,
+130(3), 309-314.</p>
+<p>Williams, L. E., &amp; Bargh, J. A. (2008). Keeping one’s distance:
+The influence of</p>
+<p>spatial distance cues on affect and evaluation. Psychological
+Science, 19(3), 302- 308.</p>
+<p>Williams, L. E., Huang, J. Y., &amp; Bargh, J. A. (2009). The
+scaffolded mind: Higher mental processes are grounded in the early
+experience of the physical world.</p>
+<p>European journal of social psychology, 39(7), 1257-1267.</p>
+<p>Zwaan, R. A. (2014). Embodiment and language comprehension: Reframing
+the discussion. Trends in cognitive sciences, 18(5), 229.</p>
