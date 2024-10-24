@@ -1,0 +1,906 @@
+<h1
+id="explaining-metaphors-in-the-french-language-by-solving-analogies-using-a-knowledge-graph">Explaining
+Metaphors in the French Language by Solving Analogies using a Knowledge
+Graph</h1>
+<p>Jérémie Roux, Hani Guenoune, Mathieu Lafourcade, Richard Moot</p>
+<p>To cite this version:</p>
+<p>Jérémie Roux, Hani Guenoune, Mathieu Lafourcade, Richard Moot.
+Explaining Metaphors in the French Language by Solving Analogies using a
+Knowledge Graph. TSD 2024 - 27th International Conference on Text,
+Speech and Dialogue, Faculty of Informatics Masaryk University; Faculty
+of Applied Sciences University of West Bohemia, Sep 2024, Brno, Czech
+Republic. pp.40-50/1196, 10.1007/978- 3-031-70563-2_4 .
+lirmm-04643561</p>
+<p>HAL Id: lirmm-04643561</p>
+<p>https://hal-lirmm.ccsd.cnrs.fr/lirmm-04643561v1</p>
+<p>Submitted on 10 Jul 2024</p>
+<p>HAL is a multi-disciplinary open access L’archive ouverte
+pluridisciplinaire HAL, est archive for the deposit and dissemination of
+sci- destinée au dépôt et à la diffusion de documents entific research
+documents, whether they are pub- scientifiques de niveau recherche,
+publiés ou non, lished or not. The documents may come from émanant des
+établissements d’enseignement et de teaching and research institutions
+in France or recherche français ou étrangers, des laboratoires abroad,
+or from public or private research centers. publics ou privés. Public
+Domain</p>
+<h1
+id="explaining-metaphors-in-the-french-language-by-solving-analogies-using-a-knowledge-graph-1">Explaining
+Metaphors in the French Language by Solving Analogies using a Knowledge
+Graph</h1>
+<p>Jérémie Roux ( {}^{ - {0008} - {1315} - {9009}} ) ,Hani Guenoune (
+{}^{ - {0008} - {7443} - {8503}} ) ,Mathieu</p>
+<p>Lafourcade ( {}^{ - {0003} - {2832} - {2143}} ) ,and Richard Moot (
+{}^{ - {0002} - {6450} - {1600}} )</p>
+<p>LIRMM, Univ Montpellier, CNRS, Montpellier, France</p>
+<p>{firstname}.{lastname}<span class="citation"
+data-cites="lirmm.fr">@lirmm.fr</span></p>
+<p>Abstract. An analogy is a relation which operates between two pairs
+of terms representing two distant domains. It operates by transferring
+meaning from a concept that is known to another that one would like to
+clarify or define. In this report, we address analogy both from the
+aspect of modeling and by automatically explaining it. We will then
+propose a system of resolution of analogical equations in their notation
+in symbol chains. The model, based on the common sense knowledge base
+JeuxDeMots (a semantic network), operates by generating a list of
+potential candidates from which it chooses the most suitable solution.
+We conclude by evaluating our model on a collection of equations, and
+reflecting upon future work.</p>
+<p>Keywords: Analogy - Metaphor - Figurative language - Natural language
+processing - Knowledge base.</p>
+<h2 id="introduction-and-state-of-the-art">1 Introduction and state of
+the art</h2>
+<p>From more or less complex ideas and reasoning, eloquent and
+persuasive expressions can emerge in a non-trivial way, carrying clear
+or nuanced meanings. Language production and understanding are accepted
+as faculties specific to humans, being capable of high-level semantic
+interpretation. A speaker seems to refer, subconsciously and
+effortlessly, to a complex and hierarchical apparatus built from his
+knowledge of the world. We seek here to “achieve […] the formalization
+of an operation that everyone recognizes as being at work in language”
+[8] with the aim of automatizing it. Our main challenge is to carry out
+such refined semantic reasoning automatically.</p>
+<p>We can describe analogy as a fundamental way of expression used in
+languages across the world [2]. Beyond this universality, the
+omnipresence of analogies and metaphors in written language justifies
+the interest of further research in the field. Manual annotation of
+metaphorical figures from the British National Corpus revealed that 241
+out of 761 sentences contained this type of language [9]. The study,
+although marked by an idiomatic dimension specific to the English
+language, represents an indicator of the prevalence of analogies in
+natural language. However, these figures cannot a priori be generalized
+to other languages.</p>
+<p>It is important to underline the central character of the operation
+of analogy in the human cognitive apparatus, whether in its fundamental
+natural operations, or in more complex and methodical demonstrations and
+reasoning (system 1/system 2 of Kahneman [5]). We are used to
+approaching the resolution of a difficult or new problem by trying to
+reduce it to another for which the solution is known. Hofstadter [3] [4]
+believes that thought and analogy are inseparable, he argues that
+analogy is the core of the cognitive functioning of human beings, and
+that every problem we encounter is nothing other than an assembly of
+analogies that we navigate more or less fluidly through our reasoning.
+He thus bases his theories on this hypothesis of a close connection
+between reasoning and analogy.</p>
+<p>In this perspective, the interpretation of analogies represents a
+crucial step forward in the development of work in Natural Language
+Processing (NLP). In the ambitious perspective of identifying and then
+analyzing this mechanism, it is crucial to scrutinize the subtleties of
+language, and to analyze their functioning from cognitive and linguistic
+points of view. A large part of the work in NLP still focuses on
+elementary, or first level, linguistic tasks (morpho-syntactic labeling,
+syntactic analysis, coreference resolution, recognition of named
+entities, etc.), while another part of the research aims to improve
+automatic inference mechanisms and the extraction of new knowledge from
+textual corpora. Ultimately, even less work focuses on bringing together
+the lessons and progress provided by each of these scientific
+directions, in order to get closer to human linguistic capacity and thus
+simulate high-level linguistic reasoning such as the understanding of
+expressions in all their creativity.</p>
+<p>In this work, we present a prototype for interpreting analogies by
+exploiting a common sense knowledge base in the form of a graph, the
+JeuxDeMots network (JDM) [7]. We will formalize statements in analogical
+squares (see Section 2) and present methods for evaluating the quality
+of these analogies (see Section 3). For an analogy, it is a question of
+bringing out correspondences between terms which are provided to the
+system by the user. The demonstrator of a first proof of concept
+associated with this article is available at the following address:
+https://analogie.demo.lirmm.fr</p>
+<h2 id="analogy-square">2 Analogy square</h2>
+<p>An analogy (when formalized in an analogy square) is a set of 4 terms
+linked by similarity relationships (see Fig. 1). The strength of an
+analogy comes from the similarity of the terms that compose it, its
+explainability is based on the multiple relationships between these
+terms.</p>
+<!-- Media -->
+<p><img src="https://cdn.noedgeai.com/0192bcc3-6714-76f4-a6b4-03202bd1c97b_2.jpg?x=426&y=1367&w=1089&h=416"/></p>
+<p>Fig. 1. Simplified diagram of the analogy square (example: ( A = )
+eye, ( B = ) sight, ( C = ) hand, ( D = ) touch)</p>
+<!-- Media -->
+<h3 id="analogy-and-similarity">2.1 Analogy and similarity</h3>
+<p>Generally speaking, figurative speech aims to integrate, into the
+description of one concept, attributes of a second, chosen on the basis
+of its semantic similarity with the concept described. Here, we tackle
+the distinction between the two notions of similarity emanating from the
+work of Gentner [1], who argues that there are at least two types of
+similarities:</p>
+<ul>
+<li><p>Relational similarity, which consists of the correspondence
+between the relations of two pairs of concepts.</p></li>
+<li><p>Attributional similarity, which is the correspondence between the
+attributes of two concepts.</p></li>
+</ul>
+<p>The notions of attribute and relation are accepted in the sense of
+first-order logic, where an attribute is a single variable predicate,
+while a relation is a predicate with two variables. We qualify two
+terms, each designating a concept, as synonyms, when their attributional
+similarity is sufficiently high, while we designate two pairs of terms
+as analogous if their relational similarity is high [10].</p>
+<p>We can, following this relational similarity, argue that it would be
+possible to generate a correspondence (analogy) ( A B ) transferring
+knowledge from a so-called source concept ( A ) to a target concept ( B
+) . The source concept is generally abstract,uncertain or unknown,the
+one on which we wish to establish an easy to understand and concrete
+target. Here are examples of pairs of concepts constituting
+analogies:</p>
+<p>[ ]</p>
+<p>[ ]</p>
+<p>[ ]</p>
+<p>The analogy (3) taken from the work of Turney and Pantel [11] could
+be formulated: “the carpenter is to wood what the mason is to stone”.
+The meanings of the relationships between the concepts mason and
+carpenter respectively with stone and wood are indeed similar. On the
+one hand, these are professions, and on the other hand, materials very
+closely linked to these respective professions. The introduction of a
+characteristic specific to the distant concept (source) therefore makes
+available to the speaker all the contextual knowledge of the concept and
+operates, in the case of an explanatory speech or reasoning, as a
+familiar and edifying support, or, in the case of a poetic intention, as
+an evocative agent helping to color the language and offering a
+complementary lyrical richness.</p>
+<h3 id="symbol-strings-and-analogy-equation">2.2 Symbol strings and
+analogy equation</h3>
+<p>When it comes to the notion of equality of relationships
+(proportionality), between two pairs of terms(A,B)and(C,D),the statement
+(3) can be written more concisely with a symbol chain notation ” ( A : B
+: : C : D ) “. The notation illustrated by the example of the
+proportional analogy between the pairs (carpenter, wood) and (mason,
+stone) previously mentioned then becomes (4).</p>
+<p>[ ]</p>
+<p>The operator “:” indicates the existence of relational relationships
+between its operands, in this case the terms carpenter and wood. The
+“::” operator then transfers this relationship from the source to the
+target by asserting the existence of a relationship of the same semantic
+nature between the terms of the second pair (terms mason and stone).
+This notation is adopted for its clear separation between the source
+(carpenter and/or wood) and the target (mason and/or stone) in an
+analogy.</p>
+<h3 id="metaphors-and-comparisons-gap-analogies">2.3 Metaphors and
+comparisons: gap analogies</h3>
+<!-- Media -->
+<table>
+<thead>
+<tr>
+<th>
+并
+</th>
+<th colspan="4">
+A : B :: C : D
+</th>
+<th>
+Sentence
+</th>
+<th>
+Type (number of unknowns)
+</th>
+</tr>
+</thead>
+<tr>
+<td>
+1
+</td>
+<td>
+( a )
+</td>
+<td>
+b
+</td>
+<td>
+( c )
+</td>
+<td>
+( d )
+</td>
+<td>
+( a ) is to ( b ) what ( c ) is to ( d )
+</td>
+<td>
+Analogy (0)
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+( a )
+</td>
+<td/>
+<td>
+C
+</td>
+<td/>
+<td>
+( a ) is like ( c )
+</td>
+<td rowspan="2">
+Comparison (2)
+</td>
+</tr>
+<tr>
+<td>
+3
+</td>
+<td/>
+<td>
+( b )
+</td>
+<td/>
+<td>
+( d )
+</td>
+<td>
+( b ) is like ( d )
+</td>
+</tr>
+<tr>
+<td>
+4
+</td>
+<td>
+( a )
+</td>
+<td/>
+<td/>
+<td>
+( d )
+</td>
+<td>
+( a ) of ( d d ) of ( a )
+</td>
+<td rowspan="2">
+Metaphor (2)
+</td>
+</tr>
+<tr>
+<td>
+5
+</td>
+<td/>
+<td>
+( b )
+</td>
+<td>
+( c )
+</td>
+<td/>
+<td>
+( b ) of ( c c ) of ( b )
+</td>
+</tr>
+<tr>
+<td>
+6
+</td>
+<td>
+a
+</td>
+<td>
+b
+</td>
+<td>
+c
+</td>
+<td/>
+<td>
+( c ) of ( b ) is ais ( a c ) is like ( a ) : it has its ( b )
+</td>
+<td rowspan="4">
+Comparative metaphor (1) Metaphorical comparison (1)
+</td>
+</tr>
+<tr>
+<td>
+7
+</td>
+<td>
+( a )
+</td>
+<td>
+b
+</td>
+<td/>
+<td>
+( d )
+</td>
+<td>
+( d ) of ( a ) is ( b )( d ) is like ( b ) : it has its ( a )
+</td>
+</tr>
+<tr>
+<td>
+8
+</td>
+<td>
+( a )
+</td>
+<td/>
+<td>
+( c )
+</td>
+<td>
+( d )
+</td>
+<td>
+( a ) of ( d ) is ( c )( a ) is like ( c ) : it has its ( d )
+</td>
+</tr>
+<tr>
+<td>
+9
+</td>
+<td/>
+<td>
+( b )
+</td>
+<td>
+( c )
+</td>
+<td>
+( d )
+</td>
+<td>
+( b ) of ( c ) is ( d )( b ) is like ( d ) : it has its ( c )
+</td>
+</tr>
+</table>
+<p>Example</p>
+<table>
+<thead>
+<tr>
+<th>
+( a = ) carpenter, ( b = ) wood, ( c = ) mason, ( d = ) stone
+</th>
+<th/>
+</tr>
+</thead>
+<tr>
+<td colspan="2">
+<ol type="1">
+<li>The carpenter is to the wood what the mason is to the
+stone.(analogy)
+</td>
+</tr>
+<tr>
+<td>
+2.The carpenter is like the mason.
+</td>
+<td>
+(comparison)
+</td>
+</tr>
+<tr>
+<td>
+3.The wood is like the stone.
+</td>
+<td>
+(comparison)
+</td>
+</tr>
+<tr>
+<td>
+4.1.The carpenter of the stone.
+</td>
+<td>
+(metaphor)
+</td>
+</tr>
+<tr>
+<td>
+4.2.The stone of the carpenter.
+</td>
+<td>
+(metaphor)
+</td>
+</tr>
+<tr>
+<td>
+5.1.The wood of the mason.
+</td>
+<td>
+(metaphor)
+</td>
+</tr>
+<tr>
+<td>
+5.2.The mason of the wood.
+</td>
+<td>
+(metaphor)
+</td>
+</tr>
+<tr>
+<td>
+6.1The mason of the wood is the carpenter.
+</td>
+<td>
+(comparative metaphor)
+</td>
+</tr>
+<tr>
+<td>
+6.2The mason is like the carpenter : he has its wood.
+</td>
+<td>
+(metaphorical comparison)
+</td>
+</tr>
+<tr>
+<td>
+7.1The stone of the carpenter is the wood.
+</td>
+<td>
+(comparative metaphor)
+</td>
+</tr>
+<tr>
+<td>
+7.2The stone is like the wood : it has its carpenter.
+</td>
+<td>
+(metaphorical comparison)
+</td>
+</tr>
+<tr>
+<td>
+8.1The carpenter of the stone is the mason.
+</td>
+<td>
+(comparative metaphor)
+</td>
+</tr>
+<tr>
+<td>
+8.2The carpenter is like the mason : he has its stone.
+</td>
+<td>
+(metaphorical comparison)
+</td>
+</tr>
+<tr>
+<td>
+9.1The wood of the mason is the stone.
+</td>
+<td>
+(comparative metaphor)
+</td>
+</tr>
+<tr>
+<td>
+9.2The wood is like the stone : it has its mason.
+</td>
+<td>
+(metaphorical comparison)
+</td>
+</tr>
+</table></li>
+</ol>
+<p>Fig. 2. Behavior observed depending on the positioning of unknowns in
+an analogy</p>
+<!-- Media -->
+<p>In the context of Aristotelian analogies, we find the case where one
+(or more) of the four symbols is missing,raising what is called an
+analogical equation of the form ” ( A : B : : C : ) ?“. The
+interpretation of the analogy comes down to solving this equation and
+consists of deducing the possible values of the missing term(s). In a
+desire for formalism, similar to King and Gentner [6], we start from the
+postulate that metaphors and comparisons can be formalized as
+manifestations of gap analogies (analogical equations with 1 or 2
+unknowns). Fig. 2 illustrates the different cases observed.</p>
+<h2 id="strength-of-an-analogy-and-election-of-candidates">3 Strength of
+an analogy and election of candidates</h2>
+<p>Let us now see the methods proposed for the evaluation of
+similarities with a view to electing the best candidate term(s) for
+resolving a gap analogy.</p>
+<h3 id="relationships-between-words">3.1 Relationships between
+words</h3>
+<p>We denote ” ( {ar}_ t{b}^{} ) ,the relation ( r ) of type ( t ) from
+( a ) to ( b ) and its weight ” ( p( {a,r_ t,b}) ) “. In our knowledge
+base, we have information about a term (or node in the context of a
+knowledge graph): its relationships with other words. We exploit the
+types of relationships present in ( {JD}{M}^{} ) and we limit ourselves
+to those mainly relating to semantics: ( r ) _associated, ( r )
+_d_amain, ( r ) _isa, ( r ) _anto, ( r ) _hypo, ( r ) _has_part, ( r )
+_holo, ( r ) _agent, ( r ) _patient, ( r ) _lieu, ( r ) _instr, ( r )
+_cara ( {c}^{2} ) .</p>
+<p>We can group the relationships between terms/nodes ( A,B ) ,as
+presented in Fig. 3,depending on whether they are direct or indirect
+(with ( {iAB} ) nodes) as well as oriented in one direction or the
+other. For a given relationship,it is possible to calculate a normalized
+weight ( {p}<em>{} ) : the ratio of the weight of the relationship (
+{ar}_ {tb} ) by the maximum weight of all relationships of type ( t )
+from node ( a ) . The ( {p}</em>{} ) value makes it possible to classify
+the relationships of a node and to select those considered to be the
+most strongly associated,i.e. the first ( {3n} ) relationships with the
+best normalized weights with regard to the type ( t ) of the
+relationship. This allows us to control the combinational cost when
+calculating the strength of similarities (see Section 3.2). The detailed
+formula for the normalized weight for fixed ( a,r_ t ) and ( b ) is
+defined in (5).</p>
+<p>[{p}_{ - }( {a,r,b}) = ]</p>
+<h3 id="relational-similarity">3.2 Relational similarity</h3>
+<p>When analyzing an analogy ( A : B : : C : D ) ,we want to recover all
+the direct and indirect relationships between ( A ) and ( B ) (in both
+directions) as well as between ( C ) and ( D ) (in both directions). The
+goal is then to perform an intersection between these types of
+relationships between ( A ) and ( B ) on the one hand and ( C ) and ( D
+) on the other hand in order to evaluate the strength of the relational
+similarity.</p>
+<hr />
+<!-- Footnote -->
+<p>https://www.jeuxdemots.org/jdm-about-detail-relations.php</p>
+<p>( {}^{2} ) Some relations are conversive,that is to say that (
+a{r}<em>{ - }{tb} b{r}</em>{ - }{t}<em>{-1}a ) has with ( {r}</em>{ -
+}{t}<em>{-1} ) the conversive relation to ( r_ t ) (example: ( r )
+</em>_<strong><em>isa and ( r ) </em></strong>__hypo).</p>
+<p>( {}^{3} ) We have arbitrarily chosen in our demonstrator the 2 most
+relevant relationships (if there are any) for reasons of simplification.
+Note that the intermediate node may be the same for these 2
+relationships.</p>
+<!-- Footnote -->
+<hr />
+<!-- Media -->
+<p><img src="https://cdn.noedgeai.com/0192bcc3-6714-76f4-a6b4-03202bd1c97b_6.jpg?x=458&y=268&w=969&h=671"/></p>
+<ol start="6" type="1">
+<li><ol start="7" type="1">
+<li></li>
+</ol></li>
+</ol>
+<p>Fig. 3. Notation of sets of direct and indirect relationships between
+( A ) and ( B )</p>
+<!-- Media -->
+<p>In the example presented in Fig. 4, we see that we have the same
+types of relationships between electron and nucleus/stone ( {}^{4} ) as
+between planet and star. In this case,the relationships are indirect,
+because no direct relations of the same type were found. We establish
+the strength of the relational similarity observed when exploring from (
+A ) to ( {B}^{ - } ) by averaging the normalized weights of the
+relations from ( A ) to ( B ) combined with those from ( A ) to the
+intermediate nodes ( {iAB} ) . For the relations from ( B ) to ( A ) ,we
+operate the same way. In practice,the results are satisfactory in the
+sense that the values obtained correspond to intuition, with the values
+approaching 1 for a similarity considered strong. Similarly, the
+similarity is considered weak when the calculated value approaches 0 .
+It is equal to 0 when no relationship (direct or indirect) is observed.
+Note that this measurement is taken as a baseline and can be refined to
+improve precision.</p>
+<p>We also implement some weighting according to the type of
+relationship, which allows, for example,to consider a relationship of
+the type ( r ) _isa, ( r ) _lieu or ( r ) _has_part as more important
+with regard to its semantic contribution,relative to an ( r )
+_associated relationship which is more vague 6 We hypothesize that
+establishing a precise link between electron and nucleus then finding
+this same link on the other side of the analogy between planet and star
+(with other intermediate nodes) makes it possible to ensure the strength
+of this relational similarity more than if it were a simple relation of
+association of ideas or even if one did not exist.</p>
+<hr />
+<!-- Footnote -->
+<p>4 The word ‘noyau’ in French has a translation of ‘stone’ as in the
+hard core of stone fruits.</p>
+<p>( {}^{5} ) Note that the strength of relational similarity from ( A )
+to ( B ) is not necessarily the same as that fron ( A ) since there are
+relationships oriented in both directions and of different weights</p>
+<p>( {}^{6} ) In the future,we will be able to use a TF-IDF type
+approach which consists of seeing how an ( {ArB} ) is as specific as
+possible to ( A ) ,such an approach would however be computationally
+intensive.</p>
+<!-- Footnote -->
+<hr />
+<!-- Media -->
+<p><img src="https://cdn.noedgeai.com/0192bcc3-6714-76f4-a6b4-03202bd1c97b_7.jpg?x=236&y=273&w=1251&h=677"/></p>
+<table>
+<thead>
+<tr>
+<th>
+Node type
+</th>
+<th>
+A
+</th>
+<th>
+( B )
+</th>
+<th>
+( C )
+</th>
+<th>
+( D )
+</th>
+<th>
+( {iAB} )
+</th>
+<th>
+( {iCD} )
+</th>
+<th colspan="2">
+( {iBD} )
+</th>
+</tr>
+</thead>
+<tr>
+<td>
+French
+</td>
+<td>
+électron
+</td>
+<td>
+noyau
+</td>
+<td>
+planète
+</td>
+<td>
+étoile
+</td>
+<td>
+atome
+</td>
+<td>
+univers
+</td>
+<td>
+avaler
+</td>
+<td>
+neutron
+</td>
+</tr>
+<tr>
+<td>
+English translation
+</td>
+<td>
+electron
+</td>
+<td>
+nucleus/stone
+</td>
+<td>
+planet
+</td>
+<td>
+star
+</td>
+<td>
+atom
+</td>
+<td>
+universe
+</td>
+<td>
+swallow
+</td>
+<td>
+neutron
+</td>
+</tr>
+</table>
+<p>Fig. 4. Execution of our demonstrator
+(https://analogie.demo.lirmm.fr) on the analogy square electron :
+nucleus :: planet : star</p>
+<!-- Media -->
+<h3 id="attributional-similarity">3.3 Attributional similarity</h3>
+<p>We now analyze the relationships of the same types between each of
+the terms ( A,B ) and a certain intermediate node ( {iAB} ) . The
+desired pattern therefore corresponds to ( {Ar}_ {tiAB} ) and ( {Br}_
+{tiAB} ) . We proceed in the same way and independently with ( C ) and (
+D ) . In Fig. 4,we see that there is no such intermediate node between
+electron and planet in JDM, the attributional similarity is therefore
+equal to 0 . This is not enough to assert that electron and planet have
+nothing to do with each other, this rather means an absence of
+attributional similarity from the point of view of the knowledge base in
+its current state. On the other hand, we note between nucleus/stone and
+star the presence of the swallow node via a relationship ( {r}<em>{ -
+}{}</em>{-1} ) ,undoubtedly because a star can for example “be swallowed
+by a black hole” and the stone of a fruit can “be swallowed by a child”
+(stone and nucleus in french (noyau) being homonyms). A human speaker
+will immediately notice that two different meanings of the word noyau
+are involved. It will therefore be necessary to carry out semantic
+refinements by distinguishing the different meanings of each word to
+obtain better results; ( {JDM} ) is equipped to handle this type of word
+sense disambiguation.</p>
+<h3
+id="overall-strength-and-election-of-candidates-in-the-case-of-metaphor">3.4
+Overall strength and election of candidates in the case of metaphor</h3>
+<p>An analogy is considered more meaningful when the relational and
+attributional similarities it contains are sufficient, or from a
+statistical point of view if their score is high. By taking an average?
+between all of these similarities we obtain a value which we will
+consider as a strength of association in the form of a probability. This
+score takes on its meaning when it comes to classifying different
+candidates in the case of a gap analogy. We can therefore evaluate the
+relevance of these candidates by calculating the score for each of them
+with the known nodes of the analogy with which they have sufficiently
+high similarity ratios. Take for example the hole analogy leg : knee ::
+arm : ?, the proposed candidate is elbow which corresponds to a response
+that comes naturally. In our implementation,the relations ( {ar}_ {tb} )
+displayed and currently used for calculating the weight are the first 2
+in order of decreasing weight for each pair(a,b); this makes the
+calculation times reasonable and gives satisfactory results for a proof
+of concept.</p>
+<h3 id="evaluation-of-analogy-equation-resolution">3.5 Evaluation of
+analogy equation resolution</h3>
+<p>We have a list of analogies with a distribution of responses provided
+by JDM players (control) 9 . We check if the top 4 predicted candidates
+include the best control term (see Fig. 5). This preliminary work
+results in an accuracy of around ( {37}% ) . A perspective for
+improvement consists,firstly,of taking into account a more covering set
+of semantic relationships, and then calibrating the methods for
+calculating similarities and their aggregations. It will be necessary to
+put in place more in-depth procedures for exploring the knowledge base
+such as inference and reasoning mechanisms. It is also possible to carry
+out data preparation, such as morpho-syntactic normalization 10 or even
+semantic disambiguation.</p>
+<!-- Media -->
+<p><img src="https://cdn.noedgeai.com/0192bcc3-6714-76f4-a6b4-03202bd1c97b_8.jpg?x=372&y=1191&w=1183&h=298"/></p>
+<p>Fig. 5. Evaluation of the relevance of the candidates (first 4)
+compared with the most played control in ( {JDM} ) for the same metaphor
+(on a corpus of 507 metaphors) with and without inference</p>
+<!-- Media -->
+<hr />
+<!-- Footnote -->
+<p>( {}^{7} ) Arithmetic and geometric means produce similar
+results.</p>
+<p>( {}^{8} ) We have only discussed metaphors so far,comparisons being
+a broader subject given that their two unknowns in the context of the
+analogical square constitute a combinatorial challenge.</p>
+<p>( {}^{9} ) By simulating the intersections for a list of just over
+2000 metaphors played in JDM (http://jeuxdemots.org/analogies.php ( )
+“exporter données”),we note that around ( {87}% ) of failure cases are
+due to missing relationships. Deductive inference processes can overcome
+this problem in ( {65}% ) of cases. Example of inference: child (
+{r}<em>{ - } ) has_part leg ( ) child ( {r}</em>{ - } ) isa human (
+{r}_{ - } ) has_part leg.</p>
+<p>( {}^{10} ) Passage through lemmatization by observing all the
+relationships of close words such as petit,petite, petits, petites
+(which means small in feminine and masculine and in singular and plural
+in french) when one of them is concerned.</p>
+<!-- Footnote -->
+<hr />
+<h2 id="synthesis">4 Synthesis</h2>
+<p>We consider the Aristotelian analogy in its symbol chain notation ( :
+: : : ) ,which means ” ( A ) is to ( B ) what ( C ) is to ( D ) ” and we
+say that there is (see Fig. 6):</p>
+<ul>
+<li><p>relational similarity (correspondence between the relations of 2
+pairs of concepts):</p></li>
+<li><p>( {R}<em>{AB} = A : B ) (with ( A ) and ( B ) source domain
+denoted ( {}</em>{AB} ) )</p></li>
+<li><p>( {R}<em>{CD} = C : D ) (with ( C ) and ( D ) target domain
+denoted ( {}</em>{CD} ) )</p></li>
+<li><p>( = {R}<em>{AB} </em>{CD} )</p></li>
+<li><p>It is possible to have a correspondence ( A B ) (respectively ( C
+D ) ) transferring knowledge from a generally familiar and concrete
+source concept ( A ) (respectively ( C ) ) to a generally unknown and
+abstract target concept ( B ) (respectively ( D ) )</p></li>
+<li><p>attributional similarity (correspondence between the attributes
+of 2 concepts):</p></li>
+<li><p>SimAttr ( {}_{AC} ) between ( A ) and ( C ) (co-P) ( {}^{11}
+)</p></li>
+<li><p>SimAttr ( {}_{BD} ) between ( B ) and ( D ) (co-P)</p></li>
+<li><p>analogy when there is a non-empty intersection of the relations
+of ( {R}<em>{AB} ) and ( {R}</em>{CD} ) ,its understanding is improved
+with the presence of attributional similarities</p></li>
+</ul>
+<!-- Media -->
+<p><img src="https://cdn.noedgeai.com/0192bcc3-6714-76f4-a6b4-03202bd1c97b_9.jpg?x=253&y=1020&w=1204&h=748"/></p>
+<p>Fig. 6. Detailed diagram of the analogy square</p>
+<!-- Media -->
+<hr />
+<!-- Footnote -->
+<p>( {}^{11} ) being the semantic relation seen as a unary predicate of
+the same value</p>
+<!-- Footnote -->
+<hr />
+<p>We believe that the strength of an analogy is defined through several
+aspects. First of all, it should be noted that the approach does not
+take place, with regard to the knowledge base, in a closed world
+context, in the sense that a missing relation ar_ ( {tb} ) does not mean
+that it’s not possible. Gaps in the knowledge base can result in
+mistakes in the system’s analysis of the analogy. These gaps,
+highlighted by mistakes, need to be identified and corrected. The
+ongoing improvements of this proof of concept include, among other
+things, more efficient reasoning mechanisms, and approaches to resolving
+the polysemy of input terms.</p>
+<p>In an analogical square, the relationships between words in the
+source domain are of the same type (one could say analogous) to those in
+the target domain establishing the strength of the relational
+similarity. Equivalent terms from opposite domains must have a
+relationship of the same type to an intermediate node (attribute). This
+configuration is referred to as attributional similarity, which is key
+to a better explanation of the analogy.</p>
+<p>In any case, the more semantically precise the relation type, the
+more useful that type is in explaining the analogy as a whole. The
+overall strength of the analogy could correspond to the average of all
+the relational and attributional similarities weights. This currently
+makes it possible to elect the candidate(s) proving to be the most
+appropriate for a given metaphor (a hole analogy with a single unknown)
+in ( {37}% ) of cases with a simple algorithm (constituting our
+baseline). However, a more precise aggregation of the different
+similarity scores would make it possible to take into account the
+nuances carried by each type of relationship; reason why the definition
+of this aggregation method represents one of the central aspects of our
+research. By definition, figurative language is subject to
+interpretation; the same analogy or its explanation can turn out to be
+more or less telling depending on the angle from which the explanation
+is approached. The goal of an automatic analyzer is to highlight what
+can most be considered a convincing or satisfactory interpretation
+(subjective concepts) for a given analogy. In the state of the art, it
+should be noted that the subject is often treated through theoretical
+and linguistic points of view rather than in computational and applied
+work.</p>
+<p>This work aims to produce a resolution model but will also serve as a
+tool for identifying anomalies in the knowledge base (imperfect and
+incomplete by nature). Any shortcomings will be highlighted by cases of
+algorithm failure and will make it possible to consolidate the
+appropriate types of relationships. One avenue for future research could
+then be to design a game (with a purpose) on the intersections of
+associations to broaden the knowledge base in this regard.</p>
+<h2 id="conclusions-and-future-work">5 Conclusions and future work</h2>
+<p>We have presented our work on the automated treatment of metaphors
+and analogies in natural language, using the knowledge graph of
+JeuxDeMots to generate plausible solution, and providing a prototype
+solver. We have also presented some promising preliminary results of our
+approach.</p>
+<p>In the future, we will first extend our approach to incorporate word
+sense disambiguation, then look at different methods for detecting and
+resolving metaphors in their linguistic context.</p>
+<h2 id="references">References</h2>
+<ol type="1">
+<li><p>Gentner, D.: Structure-mapping: A theoretical framework for
+analogy. Cognitive science 7(2), 155- 170 (1983),
+https://www.sciencedirect.com/science/article/pii/S0364021383800093,
+publisher: Elsevier</p></li>
+<li><p>Gentner, D., Holyoak, K.J.: Reasoning and learning by analogy:
+Introduction. American psychologist 52(1), 32 (1997),
+https://psycnet.apa.org/record/1997-02239-004, publisher: American
+Psychological Association</p></li>
+<li><p>Hofstadter, D.R.: Fluid concepts and creative analogies: Computer
+models of the fundamental mechanisms of thought. Basic books (1995),
+https://psycnet.apa.org/record/1995-98269-000</p></li>
+<li><p>Hofstadter, D.R.: Analogy as the core of cognition. The
+analogical mind: Perspectives from cognitive science (2001)</p></li>
+<li><p>Kahneman, D.: Thinking, fast and slow. Farrar, Straus and Giroux
+(2017)</p></li>
+<li><p>King, D., Gentner, D.: Verb Metaphors are Processed as Analogies
+(Jul 2023)</p></li>
+<li><p>Lafourcade, M.: Making people play for Lexical Acquisition with
+the JeuxDeMots prototype. In: SNLP’07: 7th international symposium on
+natural language processing. p. 7 (2007), https://
+hal-lirmm.ccsd.cnrs.fr/lirmm-00200883/</p></li>
+<li><p>Lepage, Y.: De l’analogie rendant compte de la commutation en
+linguistique. PhD Thesis, Université Joseph-Fourier-Grenoble I
+(2003)</p></li>
+<li><p>Shutova, E.: Automatic metaphor interpretation as a paraphrasing
+task. In: Human Language Technologies: The 2010 Annual Conference of the
+North American Chapter of the Association for Computational Linguistics.
+pp. 1029-1037 (2010), https://aclanthology.org/N10-1147.pdf</p></li>
+<li><p>Turney, P.D.: Measuring Semantic Similarity by Latent Relational
+Analysis (Aug 2005), http://arxiv.org/abs/cs/0508053,
+arXiv:cs/0508053</p></li>
+<li><p>Turney, P.D., Pantel, P.: From frequency to meaning: Vector space
+models of semantics. Journal of artificial intelligence research 37,
+141-188 (2010), https://www.jair.org/index.php/jair/article/
+view/10640</p></li>
+</ol>
