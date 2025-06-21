@@ -1,0 +1,2489 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Doc2x-Export-Html-Result</title>
+        <style>
+            * {
+              padding: 0;
+              margin: 0;
+              box-sizing: border-box;
+            }
+             html {
+              line-height: 1.15; /* 1 */
+              -webkit-text-size-adjust: 100%; /* 2 */
+            }
+            body {
+              padding: 20px;
+              margin: 0;
+            }
+            main {
+              display: block;
+            }
+            h1 {
+              font-size: 2em;
+              margin: 0.67em 0;
+            }
+            hr {
+              box-sizing: content-box; /* 1 */
+              height: 0; /* 1 */
+              overflow: visible; /* 2 */
+            }
+            pre {
+              font-family: monospace, monospace; /* 1 */
+              font-size: 1em; /* 2 */
+            }
+            a {
+              background-color: transparent;
+            }
+            abbr[title] {
+              border-bottom: none; /* 1 */
+              text-decoration: underline; /* 2 */
+              text-decoration: underline dotted; /* 2 */
+            }
+            b,
+            strong {
+              font-weight: bolder;
+            }
+            code,
+            kbd,
+            samp {
+              font-family: monospace, monospace; /* 1 */
+              font-size: 1em; /* 2 */
+            }
+            small {
+              font-size: 80%;
+            }
+            sub,
+            sup {
+              font-size: 75%;
+              line-height: 0;
+              position: relative;
+              vertical-align: baseline;
+            }
+            sub {
+              bottom: -0.25em;
+            }
+            sup {
+              top: -0.5em;
+            }
+            img {
+              border-style: none;
+            }
+            button,
+            input,
+            optgroup,
+            select,
+            textarea {
+              font-family: inherit; /* 1 */
+              font-size: 100%; /* 1 */
+              line-height: 1.15; /* 1 */
+              margin: 0; /* 2 */
+            }
+            button,
+            input { /* 1 */
+              overflow: visible;
+            }
+            button,
+            select { /* 1 */
+              text-transform: none;
+            }
+            button,
+            [type="button"],
+            [type="reset"],
+            [type="submit"] {
+              -webkit-appearance: button;
+            }
+            button::-moz-focus-inner,
+            [type="button"]::-moz-focus-inner,
+            [type="reset"]::-moz-focus-inner,
+            [type="submit"]::-moz-focus-inner {
+              border-style: none;
+              padding: 0;
+            }
+            button:-moz-focusring,
+            [type="button"]:-moz-focusring,
+            [type="reset"]:-moz-focusring,
+            [type="submit"]:-moz-focusring {
+              outline: 1px dotted ButtonText;
+            }
+            fieldset {
+              padding: 0.35em 0.75em 0.625em;
+            }
+            legend {
+              box-sizing: border-box; /* 1 */
+              color: inherit; /* 2 */
+              display: table; /* 1 */
+              max-width: 100%; /* 1 */
+              padding: 0; /* 3 */
+              white-space: normal; /* 1 */
+            }
+            progress {
+              vertical-align: baseline;
+            }
+            textarea {
+              overflow: auto;
+            }
+            [type="checkbox"],
+            [type="radio"] {
+              box-sizing: border-box; /* 1 */
+              padding: 0; /* 2 */
+            }
+            [type="number"]::-webkit-inner-spin-button,
+            [type="number"]::-webkit-outer-spin-button {
+              height: auto;
+            }
+            [type="search"] {
+              -webkit-appearance: textfield; /* 1 */
+              outline-offset: -2px; /* 2 */
+            }
+            [type="search"]::-webkit-search-decoration {
+              -webkit-appearance: none;
+            }
+            ::-webkit-file-upload-button {
+              -webkit-appearance: button; /* 1 */
+              font: inherit; /* 2 */
+            }
+            details {
+              display: block;
+            }
+            summary {
+              display: list-item;
+            }
+            [hidden] {
+              display: none;
+            }
+             table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+              }
+              table thead {
+                background-color: #e5e5e5;
+              }
+              table td {
+                padding: 8px;
+                /*background-color: #e5e5e5;*/
+                border: 1px solid #ccc; /* 可选，添加边框样式 */
+              }
+              table th {
+                padding: 8px;
+                /*background-color: #e5e5e5;*/
+                border: 1px solid #ccc; /* 可选，添加边框样式 */
+              }
+              h1, h2, h3, h4, h5, h6 {
+                margin-bottom: 20px;
+              }
+              p {
+                margin-top: 20px;
+                text-indent: 2em;
+                margin-bottom: 20px;
+              }
+        </style>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <style>
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c31::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "1";
+}
+
+mjx-c.mjx-c32::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "2";
+}
+
+mjx-c.mjx-c33::before {
+  padding: 0.665em 0.5em 0.022em 0;
+  content: "3";
+}
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c32::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "2";
+}
+
+mjx-c.mjx-c34::before {
+  padding: 0.677em 0.5em 0 0;
+  content: "4";
+}
+
+mjx-c.mjx-c35::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "5";
+}
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c37::before {
+  padding: 0.676em 0.5em 0.022em 0;
+  content: "7";
+}
+
+mjx-c.mjx-c38::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "8";
+}
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c39::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "9";
+}
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c31::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "1";
+}
+
+mjx-c.mjx-c30::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "0";
+}
+
+</style>
+      </head>
+      <body style="padding: 40px;">
+        <!-- Meanless: ISSN 2617-1929 (print) - Studies in History and Philosophy of Science and Technology - Vol 34 (1) - 2025-->
+<h1>PHILOSOPHICAL SCIENCES ΦIJIOCOΦCbKI HAYKM</h1>
+<p>DOI: 10.15421/272501 YAK 130.02</p>
+<p>I. M. Ushno</p>
+<p>National Aerospace University "Kharkiv Aviation Institute", Kharkiv, Ukraine</p>
+<h1>TECHNICAL DRAWING AS A FORM OF VISUAL-GRAPHIC COMMUNICATION OF ENGINEERING: PHILOSOPHICAL- ANTHROPOLOGICAL ASPECT</h1>
+<p>E-mail: <a href="mailto:i.ushno@khai.edu">i.ushno@khai.edu</a></p>
+<p>ORCID: 0000-0003-3660-3666</p>
+<p>Abstract. A technical drawing is a unique sign-symbolic system that enables the transmission of complex engineering ideas regardless of natural language and cultural context. A drawing serves as the universal language of technology, used for modelling, designing, and conveying technical information. Its sign system allows for encoding the spatial and functional characteristics of objects, making it the primary means of engineering communication. However, the philosophical dimension of this phenomenon remains underexplored. This study examines the drawing not merely as a technical tool but as a distinct form of language possessing its own semiotics, grammar, and communicative function. A philosophical-anthropological reflection on this language reveals its influence on the formation of contemporary engineering knowledge and highlights the role of technical drawing within the broader context of visual culture. The aim of this article is to analyse technical drawing as a unique visual-communicative system that serves as the foundation for transmitting technical information and developing engineering thought. To achieve this aim, we address the following objectives: to present a historical-philosophical retrospective of drawing as the "language of technology"; to examine drawing as a form of visual communication in the technical domain; to identify the semiotic characteristics and structural principles of drawing; to analyse the impact of drawing on engineering cognition and design; and to explore the prospects for the evolution of drawing in the digital era. The methodological framework of this study is based on an interdisciplinary approach encompassing the philosophy of technology, semiotics, cognitive science, and engineering. The application of philosophical analysis allows for the conceptualisation of drawing as a phenomenon that transcends its utilitarian function and shapes modes of knowing and constructing reality. Key findings. This article explores the phenomenon of technical drawing as a unique form of language within the visual-communicative space of engineering. The role of drawing as a universal sign-symbolic system that facilitates the transmission and preservation of technical information is analysed. The semiotic characteristics of drawing, its structural principles, and its impact on engineering cognition are examined. Additionally, the prospects for the development of drawing in the context of digitalisation, automation, and artificial intelligence are discussed. Conclusions. Drawing, as a form of visual-graphic communication, plays a fundamental role in technical and engineering thought. It integrates logical analysis with spatial representation, facilitating precise modelling, design, and construction of objects. Throughout its evolution, drawing has not only adapted to new technological conditions but has also retained its essential function as the universal language of engineering. A semiotic analysis of drawing reveals that it possesses its own grammar and syntax, akin to natur 1 languages, yet distinguished by its conciseness and precision. Its sign system effectively conveys technical information without the need for verbal explanation, rendering it a global medium of professional communication. Drawing is not merely a technical tool but a mode of thinking that integrates both analytical and intuitive levels of cognition. It functions as a conceptual language that shapes engineers' cognitive processes, fosters the generation of new ideas, and influences the trajectory of scientific and technological progress. Thus, an exploration of the philosophical aspects of drawing enables a deeper understanding of its significance not only in the field of technology but also in culture and the epistemology of knowledge as a whole.</p>
+<!-- Meanless: 3--><!-- Meanless: ISSN 2617-1929 (print) - Дослдження з iсторй i фылософйй науки i технiки ･ Том 34 \( \cdot \) Nе 1 ・2025-->
+<p>Keywords: philosophy of technology, history of philosophy, philosophy of anthropology, drawing, communication, engineering, semiotics, digital society. I. M. Yiiho</p>
+<p>Нацальнцй аерокосмiqнцй унiверсцеем iи.H. C. Жукобськоzo «XAI»,</p>
+<p>Xapkie, Ykpaiha</p>
+<h1>KPECJIEHHЯ ЯК ФОРМА ВВУАЛIbНО-ГРАФIЧНОÏ KOMYHIKALIII IH%KMHIPUHITY: ΦIJIOCOΦCbKO- AHTPOΠOJIOГΙЧНИй ACПЕКТ</h1>
+<p>Анотащя.Технiqне креслення е унiкальною знаково-символiчною системою,якадозволяепе-пе- редавати складнi йкенернi iдейнезалежно вiд природной мови та культурного контексту. Кресленявйдграе функцио унiверсальной мови технiки, по використовуеться для моде- ловання,конструюванняталередачйтехнiчной iнформацш.Иого знакова система дозволяе кодувати просторовi та функцюнальнi характеристики об'ектй, по робить креслення основним засобом iнженерной комунiкацii. Однак фiлософський вимip цього феномену залипиасться малопредставленим у науковййдумпi. У цьому дослiтженнi ми розглянемо кресленяня нелипеяктехнıний йктрумент,аякособливуформу мови,ппомае власну семотику,граматикутакомунiкативнуфункцию.Фiлосоосько-антропологiчне осмислення цidi МОВИДОВВОИЕС ВИЯВИТИ ППВНИВНаформування сучасного iнженерного 3нання, а також визначити роль технiчного кресленяу ширшому контекстi вiзуальной культури. Mетою статтi еанал¡зтехнiчного кресленняякособливой вiзуально-комунiкативной системи, шо слугуе основоюдлля передачй технiчной iнформацшта розвитку iнженерного мислення. Длядосягнення цети вир𝚒пуемотакi завдання:представити icторико-фiлософську ретроспективукресленняяк «мови технiки»; розглянути кресленяяякформу вiзуальной комунiкацйв технiчномупросторi; визначити семютичнi особливостi креслення та його структурнйпципи; проаналiзувати впллнв креслення на iнженерне мислення та про- ектування;дослiдити перспективи розвитку кресленя в цифову епоху. Методологiqна основадослiдкення базусться на мйкдисциплнарному пiдходi, по включае фиосойто технiки,семютику,когнiтивнута iнженерйо.Використання фытософського аналiзу дозволяе осмислити кресленяяк як феномен, пю виходить за межййтаго утилiгарной функцшй та впливаена сий способи пйнання та конструювання реальностi. Основнi результа- ти.У статтi дослiдкуеться феномен технiчного кресленяяякособливой форми мови увауально-комунiкативному просторi йженерй.Аналiзуеться роль кресленняяк унiвер- сальной знаково-символiчнойстеми, ппо забезпечуе передачу та збереження технiчной iиформапй.Розглянуто семотичнi особливостi креслення,його структурнi принципи та вПИВНа Ниженерне мислення.Також обговорюються перспективи розвитку креслення в умовах пифровйзацш,автоматизацйта штучного iнтелекту.Висновки.Кресленяяяк форма вйуально-графйнойкомункацii вiдтрае фундаментальну роль утехнiчномута анженерному мисленнi.Воногиеднуелогiqний аналйз is просторовимуявленням,спри- яючи точному моделюванню,проектуванню та конструтованню об'ектв.Упроцесi своей еволюпоцй кресленятнелицеадаптувалосядононих умолих технологiqних умов, алей зберело свою сутнicну функцио-бути унiверсальною мового iнженерй. Семютичний аналiз кресленя показуе, шовоно мае власну граматику та синтаксис, подбно до природних MOB, алевирзняетъся своето лаконiчнiстю та точнiстю. Иого знакова система дозволяе еоективно передавати технiчну йформацiюбез необхiдностi вербального пояснени, шо робить його глобальним засобом професйной комунiкапй.Креслення е не тiльки технiчним inctрументом, а й способом мислення, який ihтегруе аналтичнийта iнтуйтивний рiвнi пання.Воновиступаев ролй концептуальной мови,поформуе когнiтивнi процеси iн- женерыв, сприяе генерацii нових iдейта впллнвае на розвиток науково-технчного прогресу.</p>
+<!-- Meanless: 4--><!-- Meanless: ISSN 2617-1929 (print) - Studies in History and Philosophy of Science and Technology - Vol 34 (1) - 2025-->
+<p>Таким чином,дослiдження ойтософських аспектев кресленя дозволяе глибще усвiдомити його значення не липеу сферй технiки, алей укулвтурйта епiстемологй знання загалом. Knoyogi cnoaa: dinocodix texthik, icropia dinocodii, dinocodis attpononorii, kpec.nethym, ko- мунiкацiя, iнжинiринг, семioтика, пифрове суспiльство.</p>
+<p>Introduction. Technological progress not only transforms the environment in which human existence unfolds but also shapes new modes of communication between humans, technology, and social systems. Engineering, as a domain of human activity, entails not merely the creation and operation of technical objects but also the development of a distinctive system of signs and symbols that facilitates interaction among participants in technical processes. In this context, the "language of technology" emerges not solely as a collection of graphical, numerical, or mathematical representations but as an autonomous communicative space that structures human thought, cognition, and action.</p>
+<p>The visual-communicative dimension of technical language is fundamental to engineering practice, as drawings, schematics, 3D models, and algorithms function not merely as instruments for transmitting information but as tools for conceptualisation, prediction, and the materialisation of ideas. Contemporary visualisation technologies, augmented reality, and digital modelling extend the boundaries of engineering design, fostering the integration of cognitive processes with technological platforms.</p>
+<p>From a philosophical-anthropological perspective, the language of technology can be interpreted as a phenomenon that influences the identity of the modern human. Technical thinking, grounded in visual-logical analysis, increasingly displaces traditional verbal forms of cognition, raising critical questions about the transformation of cognitive strategies and modes of interaction with reality. At the same time, the digital revolution, automation, and artificial intelligence construct a new communicative paradigm in which human engagement with technical systems evolves beyond the classical subject-object relationship, positioning the individual as an equal participant in the flow of information.</p>
+<p>This article aims to investigate how the language of technology constitutes the communicative space of engineering, the ways in which it shapes the anthropological dimensions of contemporary engineering activity, and the significance of its visual representation for comprehending technical reality.</p>
+<p>To achieve this objective, we undertake the following tasks: to present a historical-philosophical retrospective of technical drawing as the "language of technology"; to examine technical drawing as a form of visual communication within the technical sphere; to determine the semiotic characteristics and structural principles of technical drawing; to analyse the impact of technical drawing on engineering cognition and design; and to explore the prospects for the evolution of technical drawing in the digital era.</p>
+<p>The methodological foundation of this research is based on an interdisciplinary approach that integrates the philosophy of technology, semiotics, cognitive science, and engineering. The application of philosophical analysis enables us to conceptualise technical drawing as a phenomenon that transcends its utilitarian function and influences the very modes of knowledge acquisition and the construction of reality. The philosophical-anthropological approach entails an examination of how technical language influences the cultural and social identity of engineers. The semiotic analysis investigates the language of technology as a system of signs, encompassing symbols, graphical models, technical drawings, algorithms, and other forms of representation. The historical method involves the study of the evolution of technical language, tracing its development from the era of mechanical drafting to contemporary digital platforms. The application of these methods will enable a comprehensive analysis of technical language in engineering, facilitating an exploration of its impact on cognitive processes, communication, and professional practice.</p>
+<p>Historiography of the Problem. The study of technical drawing as a communicative and cognitive system is deeply rooted in multiple disciplines, including the history of technology, philosophy of technology, semiotics, and cognitive science. The primary sources referenced in this study encompass works from various domains, each contributing to a nuanced understanding of the evolution, function, and epistemological significance of technical drawing in engineering thought. From a historical perspective, particular reference is made to the research of L. Launay, who provides an in-depth analysis of the historical development of engineering graphics and its role in shaping technical knowledge across different epochs. His studies trace the transition from early manual drafting techniques to the advent of modern digital visualization tools, illustrating the profound transformations in engineering practices.In the context of philosophical analysis, the study incorporates the foundational works of M. Heidegger, G. Simondon, and L. Mumford, each of whom provides distinct perspectives on the relationship between technology, human cognition, and technical representation. Heidegger’s examination of «technē» and the essence of technology offers critical insights into the ontological dimensions of technical drawing.</p>
+<!-- Meanless: 5--><!-- Meanless: ISSN 2617-1929 (print) - Дослiдження з icторй i фылософйй науки i технiки ･ Том 34 \( \cdot \) Nе 1 : 2025-->
+<p>Simondon's theory of individuation and technological mediation highlights the dynamic nature of engineering cognition, while Mumford's sociotechnical analysis reveals how technical systems influence and are influenced by broader cultural and societal contexts. The semiotic dimension of technical drawing is explored through the work of A. Hedzyk, whose research delineates the structural and symbolic principles underlying engineering graphics. His analysis of semiotic characteristics, syntactic conventions, and the cognitive functions of visual representation provides a crucial framework for understanding how technical drawings function as a language that transcends linguistic barriers. The study of engineering cognition is deeply informed by the monograph by O. L. Terokhina, which investigates how engineers conceptualize and manipulate spatial information through graphical means. Her work situates technical drawing within the broader landscape of cognitive science, emphasizing its role as an instrument of thought that facilitates problem-solving, design, and innovation.</p>
+<p>Finally, contemporary trends in the evolution of technical drawing in the digital era are explored through the dissertation research of P. I. Koliasa. His work examines how emerging digital technologies - such as parametric modeling, augmented reality, and artificial intelligence - are reshaping the conventions and methodologies of technical representation. These advancements not only redefine traditional drafting techniques but also introduce novel epistemological and communicative challenges that warrant further investigation.</p>
+<p>Basic material and results. Historical-Philosophical Retrospective of Technical Drawing as the "Language</p>
+<h2>of Technology".</h2>
+<p>The history of the development of science and technology dates back to the ancient world. As soon as humans realised that they could not only facilitate their lives with the help of tools but also share these technological advancements with others, the idea of creating images emerged. Initially, there was hardly any distinction between a drawing and a technical sketch. Images were created by hand, relying on estimation. Technical drawings required verbal explanations, which is why annotations were sometimes added. Gradually, these drawings became more refined. Long before the invention of writing, humans had already learned to depict objects from their surroundings. At first, the materials used for these depictions included earth, cave walls, and stones, upon which images were scratched. Later, materials such as birch bark, leather, papyrus, parchment, and paper were utilised, with images applied using ink or paint with quill pens. It was only towards the end of the 18th century that pencils began to be used for the creation of graphical representations.</p>
+<p>Transformations in visual-graphic communication concerned not only the materials used for technical drawing but also its functions. Initially, drawings served as a primitive means of demonstrating how a particular technology was to be used. However, with the increasing complexity of technical processes, the need arose to convey information to specialists more accurately. Technical drawing is a unique visual-graphic language of human culture. As one of the oldest languages in the world, it is characterised by its conciseness, precision, and clarity. Tracing the development of technical drawing from ancient times to the present day, two main directions can be identified: architectural schematics, which were used for the construction of dwellings, industrial buildings, bridges, and other structures, and industrial sketches, which were applied in the design of various tools, devices, and machines.</p>
+<!-- Meanless: 6--><!-- Meanless: ISSN 2617-1929 (print). Studies in History and Philosophy of Science and Technology. Vol 34 (1). 2025-->
+<p>Drawings and schematics, as professional instruments of communication, have played a crucial role in the advancement of scientific and technological progress. A particularly significant figure in shaping modern methods of representing geometric forms of objects in the surrounding world was the French scholar and engineer François Frézier <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{1}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>1</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> . His works can be considered the first fundamental textbooks on the principles of descriptive geometry. The emergence of descriptive geometry as a discipline concerned with the representation of spatial geometric forms on a plane is traditionally associated with the French mathematician and engineer Gaspard Monge, to whom the notable thesis is attributed: "Technical drawing is the language of technology". The emergence of descriptive geometry as a science of representing spatial geometric forms on a plane is attributed to the French mathematician and engineer Gaspard Monge. In 1795, the École Normale Supérieure ("Ulm") was established in Paris for the training of educators, with a significant part of its curriculum dedicated to disciplines related to the theory and practical application of descriptive geometry <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{2}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> .</p>
+<p>The history of technical drawing illustrates a remarkable scientific and technological achievement - the creation of a universal language for engineers that does not require translation into different spoken languages, as it is understood by technical specialists worldwide. The evolution of tools, from compasses and rulers to Computer-Aided Design (CAD) systems, has not altered the fundamental nature of visual-graphic communication. According to psychologists, the majority of people are visual learners, meaning they perceive information primarily through sight-particularly when it comes to the description of space, technology, and equipment. This serves as another argument for the philosophical-anthropological dimension of the "language of technology".</p>
+<p>The historiography of research into technical language reveals its evolution from being understood as a purely instrumental tool to being recognised as a conceptual phenomenon that shapes human thought and interaction with the technical world. The visual-communicative dimension of technical language stands at the forefront of contemporary research, as it determines the ways in which humans engage with the technological environment. Furthermore, it unveils new perspectives in the anthropological interpretation of technology, underscoring the profound epistemological and cognitive implications of technical representation in engineering and beyond.</p>
+<h2>Philosophical Foundations of Communication in Technology</h2>
+<p>The issue of the language of technology occupies a significant place in the context of contemporary philosophy of science and technology. This field of knowledge remains relatively underexplored. The primary factor contributing to its ambiguity is the continuous development of modern technology and the emergence of new technological advancements that had not previously existed. A more detailed historical-philosophical analysis of the philosophy of technology is presented in the earlier work Philosophy of Technology: A Historical-Philosophical Context, which highlights the importance of language and translation in scientific research <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{3}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>3</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> . In the context of this article,we will refer to several works that shed light on the philosophical foundations of communication in technology.</p>
+<p>Technology is not only a means of practical human activity but also a specific form of communication based on the use of sign-symbolic structures. Every technical object carries particular information that is transmitted through sign systems, determined both by the internal logic of the technical artefact and the socio-cultural context of its functioning. Signs and symbols in technology perform two primary functions: representation and operationalisation of knowledge. Representation manifests in the form of drawings, diagrams, algorithms, and models, which enable the recording and transmission of technical knowledge. Operationalisation ensures that technical signs not only describe an object but also facilitate its construction and operation. Thus, technology, as a communicative phenomenon, serves as a field of interaction between cognitive, engineering, and social practices.</p>
+<hr>
+<!-- Footnote -->
+<p>1 Дидактика математики: проблеми i дослiдження: межнародний збipник наукових прапик лерапик. ДонН У. 2010. Вип. 34.</p>
+<p>2 Launay L. Un grand français. Monge. Fondateur de l'École Polytechnique. Paris: Éditions Pierre Roger, 1933. <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{3}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>3</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> У Уппно I. M. Фiлософй технiки та технологй: icторико-фiлософсвкий контекст Наукове лзиня: ме- modonozia ma mexhorozia. Фi:rocoϕiø. 2023. № 2(52). C. 30-36.</p>
+<!-- Footnote -->
+<hr>
+<!-- Meanless: 7--><!-- Meanless: ISSN 2617-1929 (print) - Досллдження з iсторй i фылософйтнауки i технiки ･ Том 34 \( \cdot \) Nе 1 ・2025-->
+<p>According to Martin Heidegger, technology is a mode of revealing being (aletheia), which shapes a distinct structured reality, subordinated to the logic of technical design and implementation. In his work The Question Concerning Technology, Heidegger argues that technical language is not merely a means of instrumental control over the world but also a way of mastering it through specific forms of conceptualisation and representation: "And yet, it is correct to say that modern technology is also a means to an end. It is no coincidence that instrumental conceptions of technology drive all efforts to place humans in the right relation to technology. Everything is aimed at properly managing technology as a means. People want to establish what is called "the supremacy of spirit over technology". They want to master technology. This desire to master becomes ever more insistent as technology increasingly threatens to slip beyond human control. But what if technology is not merely a means - then how do we deal with the desire to master it?" <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{24}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>24</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></p>
+<p>This issue becomes particularly relevant when Martin Heidegger discusses "new" technology. The more complex technology becomes, the more pressing the need to understand it. Contemporary philosophy is already concerned with the question of technology's subjectivity. If technology attains such a status, we must learn how to communicate with it. The complexity of modern technologies necessitates a universal technical language that is simplified, as humans struggle to keep pace with rapid technological advancements. Today, technological design is aimed at enabling humans to manage technology effectively. Initially, technical drawings served as a universal language among professional engineers. Later, they became essential for consumers to master technology, as its complexity no longer allows for unambiguous use. Technical language guides and directs us through the multifunctionality of technology. It is impossible to do without technical documentation, where visual communication facilitates comprehension of what is written. A drawing is often more accessible than a textual description. As previously mentioned, the number of visual learners exceeds other cognitive types (auditory and kinesthetic learners), and this is even more evident in modern culture, which is predominantly visual. Society is being prepared for simplified communication to comprehend the increasingly complex nature of technology. Through drawings, technology seemingly becomes closer to humans.</p>
+<p>Gilbert Simondon considers technology as an autonomous sphere that develops according to its own internal laws. He argues that technical objects emerge through a process of technogenesis, involving their gradual evolution from primitive artefacts to complex systems. In this context, the language of technology is a dynamic system that includes elements of historical continuity as well as new forms of symbolisation. "In a technical object, what is recognised is precisely form- the material crystallisation of a certain operational scheme and a certain thought resulting from the resolution of a specific problem. For this form to be understood, the subject must possess analogous forms: information is not something that arrives independently but a meaning that arises from the transmission of forms - one external to the subject, the other internal. Thus, for a technical object to be perceived as technical rather than merely utilitarian, for it to be valued as the result of an invention and as a carrier of information rather than mere utility, the recipient must possess certain technical forms. Then, through the technical object, interhuman relations are created, which constitute a model of transindividuality"5.</p>
+<p>The "language of technology" thus emerges as a specific form that enables the understanding of technology. The assessment of the complexity of a drawing provides insight into the level of complexity of a technical object. Without a visual representation, it is difficult to determine the level of technological innovation.</p>
+<hr>
+<!-- Footnote -->
+<p><mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{4}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>4</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> Heidegger M. The question concerning technology. Basic writings / ed. by D. F. Krell. New York: Harper &#x26; Row, 1977. P. 287.</p>
+<p><mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{5}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c35"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>5</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> Simondon G. Du mode d’existence des objets techniques. Paris: Aubier,1989. P. 45.</p>
+<!-- Footnote -->
+<hr>
+<!-- Meanless: 8--><!-- Meanless: ISSN 2617-1929 (print). Studies in History and Philosophy of Science and Technology. Vol 34 (1). 2025-->
+<p>Lewis Mumford, in his analysis of the evolution of technical forms, emphasises that technological systems are not only functionally but also culturally significant. His concept of the megamachine suggests that technology is structured as a hierarchical complex in which language plays a key role in coordinating and transmitting knowledge. Mumford highlights that the language of technology is not merely a reflection of existing technological possibilities but also an instrument for their further development: "drawings for the creation of even more powerful megamachines "6. A drawing serves as a criterion for the power of technology. Its application in historical retrospect shows that when technology becomes so complex that it can no longer be described merely in words, drawings become essential. Drawings also reflect hierarchical structures - they evolved from simple to complex, incorporating increasing theoretical and practical complexity. There is a direct proportional relationship between technical drawings and technology. Their level can reveal much about engineering culture within a professional community.</p>
+<p>In the philosophy of technology, drawings are considered a special form of conceptual language that enables the recording, transmission, and interpretation of technical knowledge. A drawing is not only a means of documenting technical information but also a method for structuring and conceptualising it. As Jacques Derrida points out, writing, in its broadest sense, is not merely a means of representation but also a mechanism for constructing meaning. In this sense, technical drawing can be viewed as a unique form of writing that shapes the way engineers think.</p>
+<p>From a semiotic perspective, a drawing is a sign system that combines iconic, indexical, and symbolic elements. Iconicity is evident in the resemblance of a drawing to the real object; indexicality appears in references to its structural and functional characteristics; symbolicity manifests in the use of standard notations with universally accepted meanings.</p>
+<p>With the development of digital technologies, the nature of drawing as the language of technology is also changing. The transition from traditional drafting to computer-aided design (CAD) not only transforms the representation of technical information but also reshapes forms of engineering thinking In this context, an important question arises: does drawing remain an autonomous sign system, or does it become part of a broader multimodal communication that includes 3D modelling, animation, and virtual reality.</p>
+<p>The philosophical reflection on the language of technology demonstrates that it is a complex communicative phenomenon that integrates symbolic, cognitive, and social aspects. Technical drawing, as one form of the language of technology, functions not only as a means of transmitting information but also as a way of conceptualising technical knowledge. The analyses of Heidegger, Simondon, and Mumford allow us to view technology not merely as a collection of material objects but as a special system of communication that defines how humans interact with the world. The advancement of digital technologies presents new challenges for the language of technology, requiring further research in the fields of philosophy of technology and semiotics.</p>
+<h2>Semiotics of Technical Drawing as a Visual Language</h2>
+<p>Technical drawing is one of the fundamental forms of visual communication, employed for the recording, transmission, and interpretation of technical information. Within the framework of semiotics, technical drawing can be regarded as a specific sign-based code that integrates elements of iconic, symbolic, and indexical signs. Like any language, technical drawing possesses its own rules for organising sign elements, ensuring its functionality and efficiency within the communicative domain of engineering practice. A distinctive feature of technical drawing is its visual-graphic structure, which facilitates the transmission of complex technical concepts through symbolic representations and geometric configurations. Compared to natural language, technical drawing exhibits a higher level of formalisation, minimising the potential for ambiguity and subjective interpretation.</p>
+<hr>
+<!-- Footnote -->
+<p>6 Mumford L. Myth of the machine: Technics and human development. Boston: Mariner Books, 1971.</p>
+<!-- Footnote -->
+<hr>
+<!-- Meanless: 9--><!-- Meanless: ISSN 2617-1929 (print) - Досллдження з iсторй i фылософйтнауки i технiки ･ Том 34 \( \cdot \) Nе 1 ・2025-->
+<p>In Ukrainian scholarly discourse, A. Hedzyk's work Technical Drawing as a Semiotic Means of Cognitive and Transformative Human Activity explores the role of technical drawing as a pedagogical tool in schools. However, his conclusions extend far beyond education: "Semiotics establishes a universal language applicable to any specific language or sign system, including the language of science and the specialised signs employed within scientific discourse. Of particular significance are semiotic studies that demonstrate the necessity for linguistic purification, simplification, and systematisation, even within the domain of scientific language. Technical drawing, as a specific catalyst in the informational sphere, enables individuals - including those engaged in scientific inquiry - to extricate themselves from the intricate web of words they have spun. The theory of signs serves as an invaluable instrument for disentangling this "web" <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{7}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c37"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>7</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> .</p>
+<p>Engineering graphics is founded upon a rigorously regulated system of signs, symbols, and codes, which facilitate the transmission of information in a standardised format. The semiotic structure of technical drawing comprises three principal levels:</p>
+<ol>
+<li>
+<p>The Iconic Level - The depiction of an object through graphical representation that preserves its proportions and geometric characteristics.</p>
+</li>
+<li>
+<p>The Symbolic Level - The application of conventional signs to convey additional information about materials, machining processes, tolerances, and technological parameters.</p>
+</li>
+<li>
+<p>The Coded Level - The standardisation of drawing elements in accordance with international technical regulations, ensuring a common language for professional communication among engineers worldwide.</p>
+</li>
+</ol>
+<p>The employment of sign systems in technical drawing constitutes a pivotal aspect of its semantic function, ensuring the precise transmission of information and eliminating ambiguity in design and manufacturing processes. Like any linguistic system, technical drawing possesses its own grammar and syntax, which govern the arrangement of its elements. The grammatical rules of technical drawing encompass principles for positioning objects in space, the logic of projection views, scaling conventions, and annotation practices.</p>
+<p>The syntactic structure of technical drawing dictates how its components - lines, shapes, inscriptions - combine into a coherent system. This structure bears resemblance to sentence construction in natural language, where words and phrases coalesce into meaningful statements. Analogous to linguistic principles that regulate word order and grammatical forms, technical drawing adheres to standards such as ISO, DIN, and GOST, which establish universal conventions for its use.</p>
+<p>According to A. Hedzyk: "Technical drawing, as a system of interrelated signs, possesses a syntactic structure wherein certain permissible sign combinations function as statements. Furthermore, it incorporates sign-based means that can be universally interpreted by a wide range of users. The syntactic, semantic, and pragmatic dimensions of technical drawing become more intelligible when examined within the broader framework of semiotics. Just as the comprehensive characterisation of an individual sign is possible only by considering its relation to other signs, to objects, and to its users, so too can a thorough analysis of graphical language be achieved only by delineating the syntactic, semantic, and pragmatic rules that govern its sign-based elements" <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{8}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c38"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>8</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> .</p>
+<p>Thus, technical drawing can be conceptualised as a universal sign system operating at the intersection of visual representation and symbolic encoding. Its semiotic potential enables not only the documentation of technical knowledge but also its transmission within the global professional community, obviating the need for translation into various natural languages. Technical drawing constitutes a sophisticated semiotic system that integrates elements of iconic, symbolic, and coded levels. Its grammar and syntax form a structured visual language that facilitates the effective communication of technical information. The distinguishing feature of technical drawing, in contrast to natural language, lies in its formalisation and standardisation, which render it a universal communicative tool within the engineering domain. Consequently, the study of the semiotics of technical drawing unveils new perspectives on its role within contemporary technical discourse.</p>
+<hr>
+<!-- Footnote -->
+<p>т Гедзик А.Кресленняяксемютичний засiб пiзнавальной та перетворювальной деяльностйлодини. Психолоzo-neòazoèıиi проблеми сiльськойи. 2008. Вип. 26. C. 43.</p>
+<p>8 Гедзик А.Кресленняяксемютичний засiб пiзнавальнойта перетворювальной делъностйлодини. Психогоzo-neòazōzīий проблеми сйъськойи. 2008. Вип. 26. C. 44.</p>
+<!-- Footnote -->
+<hr>
+<!-- Meanless: 10--><!-- Meanless: ISSN 2617-1929 (print). Studies in History and Philosophy of Science and Technology. Vol 34 (1). 2025-->
+<h2>Drawing as an Instrument of Engineering Thought</h2>
+<p>Engineering thought is a distinct form of cognitive activity, grounded in the integration of logical analysis, spatial imagination, and practical realisation. This subject is examined in greater depth in the monograph by O. L. Terokhina, Formation of Technical Thinking in Future Bachelors of Mechanical Engineering in the Process of Professional Training: "Engineering thought constitutes a particular type of thinking that develops and manifests itself in the resolution of engineering tasks. It is directed towards facilitating interaction with technical objects and operates on both cognitive and instrumental levels" <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{9}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c39"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>9</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> . In this context, drawing functions not merely as a means of recording technical ideas but as an active instrument of thought.</p>
+<p>Visual-logical thinking enables engineers to synthesise abstract design with the concrete parameters of the object under construction. As a form of visual representation of technical concepts, drawing aids in structuring thought, systematising knowledge, and identifying the optimal means of project realisation. The engineering process encompasses engagement with various types of drawings - from preliminary sketches to highly detailed technical schematics - ensuring a multi-layered analytical approach and reflective evaluation of design solutions.</p>
+<p>Drawing plays a fundamental role at all stages of technical object creation. During the modelling phase, it allows for the exploration of potential configurations of the future artefact, facilitates the analysis of its spatial characteristics, and aids in the identification of prospective technical challenges. In the design phase, drawing functions as an instrument of formalisation, ensuring the precise transmission of engineering thought from conceptualisation to physical reality.</p>
+<p>The act of construction, as the final stage of technical development, is inconceivable without drawing, as the graphical language serves as the primary medium through which ideas are accurately realised in material form. The utilisation of drawings in the creation of technological devices and mechanical systems contributes to the minimisation of errors, the optimisation of resources, and the enhancement of overall production efficiency.</p>
+<p>As a cognitive instrument, drawing synthesises two fundamental levels of thought: the analytical and the intuitive. The analytical level entails the application of rigorous mathematical calculations, geometric constructions, and adherence to regulatory standards. It ensures the logical coherence of the design process, guaranteeing conformity with technical requirements and foundational engineering principles. The intuitive level, by contrast, reflects a creative approach to working with drawings. Engineers, drawing upon personal experience and imagination, are capable of discovering unconventional solutions, anticipating potential developments in structural design, and experimenting with the form and functionality of an object.</p>
+<p>The convergence of analytical and intuitive approaches in the process of working with drawings establishes an effective system of engineering thought, one that enables not merely the precise replication of existing technological solutions but also the development of innovative concepts. In this way, drawing is not solely a technical instrument but a form of cognitive activity that defines the nature of engineering creativity and the trajectory of scientific and technological progress</p>
+<h2>Practical Significance of Technical Drawing in Modern Engineering</h2>
+<p>The contemporary development of digital technologies has significantly transformed the practice of technical drawing, shifting it from traditional manual methods to the realm of computer graphics. The use of 2D and 3D modeling enables engineers to create precise, interactive, and multidimensional representations of objects, thereby enhancing design quality and accelerating production processes. 2D drawings, executed using software tools such as AutoCAD, SolidWorks, or DraftSight, retain the classical system of conventional symbols, notations, and projections while simplifying editing and modifications. 3D modeling technologies open new possibilities for visualizing technical objects, ensuring accurate transmission of spatial characteristics and interrelations between components. Virtual and augmented reality (VR/AR) add a new level of interactivity, allowing engineers not only to view but also to interact with digital models in real time. This contributes to a deeper understanding of design solutions and engineering processes.</p>
+<hr>
+<!-- Footnote -->
+<p>р Терьох𝚒на О. Л. Формування технiчногомислення майбутнix бакалавра мапинобудуввання упропесi фаховойппатотовки.Запорiжжя: 3НТУ, 2017. C. 25.</p>
+<!-- Footnote -->
+<hr>
+<!-- Meanless: 11--><!-- Meanless: ISSN 2617-1929 (print) - Досллдження з iсторй i фылософйтнауки i технiки ･ Том 34 \( \cdot \) Nе 1 ・2025-->
+<p>Technical drawing remains an integral part of engineering education, shaping technical thinking and developing spatial visualization skills. The integration of modern drawing software into the educational process enables students to master not only classical design methods but also innovative digital approaches, which is critically important in the context of contemporary engineering production. The dissertation research by P. I. Koliasa, Formation of Graphic Competence of Future Engineering Educators through Digital Technologies, highlights this significance: "The formation of graphic competence in future engineering educators through digital technologies was implemented through the unity of the following components: the axiological component, which ensured the development of professional values; the cognitive-informational component, encompassing specialized knowledge and problem-solving methods, as well as the ability for lifelong learning and self-education; the praxeological component, which developed practical skills in working with graphical objects through digital technologies in higher education institutions or industry; and the sociopsychological component, which fostered responsibility in the field of digital technologies concerning both physical and psychological well-being" <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{10}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>10</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> .</p>
+<p>The universality of technical drawing as the language of engineering ensures the standardization of educational programs across different countries, promoting the unification of technical education on a global scale. The incorporation of 3D modeling technologies, simulation programs, and VR tools into the learning process enhances the effectiveness of engineering training, providing students with opportunities not only to study drawings but also to interact directly with digital prototypes.</p>
+<p>Given the rapid advancement of technology, the future of technical drawing as a means of engineering communication continues to evolve. Despite the widespread adoption of automated design and modeling systems, the fundamental role of technical drawing remains unchanged - it ensures clear and standardized transmission of technical information.</p>
+<p>The development of artificial intelligence and automated design systems contributes to optimizing the drawing process, reducing manual labor, and simplifying the development of complex engineering objects. However, the key principles of technical drawing - accuracy, standardization, and clarity - are preserved even in digital formats. The application of blockchain technology for storing and exchanging drawings could introduce a new level of security and authenticity to technical documentation.</p>
+<p>Thus, technical drawing remains not only a technical tool but also a philosophical and epistemological phenomenon that structures engineering knowledge and defines the principles of interaction between humans, technology, and space. Its future development, driven by digital technologies, will enable even more efficient, rapid, and universal communication in the fields of science and engineering</p>
+<h2>Conclusions</h2>
+<p>Technical drawing, as a form of visual-graphic communication, plays a fundamental role in technical and engineering thought. It serves not only as a means of representing spatial and technical concepts but also as a cognitive instrument that structures the very framework of engineering reasoning. By integrating logical analysis with spatial imagination, technical drawing fosters a distinct mode of thinking that enables professionals to operate with abstract constructs, transforming them into concrete technical solutions. It facilitates precise modelling, designing, and constructing of objects, ensuring a standardised mode of knowledge transmission within professional engineering communities. The evolution of technical drawing demonstrates its capacity to adapt to technological transformations while preserving its essential function - acting as the universal language of technical discourse. From the earliest manual sketches to contemporary digital 3D models, technical drawing remains not only a tool for recording engineering thought but also a medium for its transformation and refinement.</p>
+<hr>
+<!-- Footnote -->
+<p><mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{10}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c30"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>10</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> Komac II. I. Формування графiqной компетентностi майбутнix iнженерiв-педагогв засобами цифрових технологiй:дис. ... д-рапед. наук. Тернопiль: ТНПУ im. В. Гнатюка, 2022. C. 4.</p>
+<!-- Footnote -->
+<hr>
+<!-- Meanless: 12--><!-- Meanless: ISSN 2617-1929 (print). Studies in History and Philosophy of Science and Technology. Vol 34 (1). 2025-->
+<p>A semiotic analysis of technical drawing reveals it as a sign system governed by a specific grammar and syntax, which, akin to natural languages, structures communication processes yet distinguishes itself by its conciseness, precision, and standardisation. The application of technical drawing as a professional communication tool enables engineers and designers to exchange ideas without the need for verbal explanation, reinforcing its status as a global system for conveying technical information. This underscores the notion of technical drawing as a universal language, wherein meaning is transmitted through a structured system of graphical signs, and the process of creating these drawings embodies not only pragmatic functions but also deeper cognitive and cultural dimensions of technical knowledge.</p>
+<p>Technical drawing is not merely an instrumental technique; it represents a distinctive form of thought that integrates both analytical and intuitive dimensions of cognition, establishing a unique cognitive practice that encompasses both rational and creative aspects. The analytical aspect of technical drawing entails the precise application of mathematical, geometrical, and physical principles, ensuring the logical consistency of engineering solutions. Conversely, the intuitive dimension is linked to creative exploration, experimental engagement, and heuristic approaches to problem-solving. Technical drawing emerges not only as a mechanism for objectively modelling reality but also as a means of constructing new knowledge, fostering the generation of innovative ideas, and shaping the trajectory of scientific and technological progress.</p>
+<p>Thus, the philosophical reflection on technical drawing as a symbolic system, a cognitive mechanism, and an instrument of technical thought - enables a deeper understanding of its significance not only within the domain of engineering but also within the broader context of science, culture, and the epistemology of knowledge. This perspective opens avenues for further interdisciplinary research into the interrelations between technical communication, cognitive processes, and the socio-cultural determinants of technological development. REFERENCES</p>
+<ol>
+<li>
+<p>Dydaktyka matematyky: problemy i doslidzhennia: Mizhnarodnyi zbirnyk naukovykh robit [Didactics of Mathematics: Problems and Investigations: International Collection of Scientific Works]. (2010). Donetsk: DonN U. 34. (in Ukrainian).</p>
+</li>
+<li>
+<p>Hedzyk, A. (2008). Kreslennia yak semiotychnyi zasib piznavalnoi ta peretvoriuvalnoi diialnosti liudyny [Drawings as a Semiotic Means of Human Cognitive and Transformative Activity]. Psykholoho-pedahohichni problemy silskoi shkoly, (26), 39-44 (in Ukrainian). Retrieved from <a href="http://nbuv.gov.ua/UJRN/Ppps_2008_26_7">http://nbuv.gov.ua/UJRN/Ppps_2008_26_7</a></p>
+</li>
+<li>
+<p>Heidegger, M. (1977). The question concerning technology. In D. F. Krell (Ed.), Basic writings (pp. 287). Harper &#x26; Row. Retrieved from <a href="https://www.english.hawaii.edu/criticalink/heidegger/">https://www.english.hawaii.edu/criticalink/heidegger/</a> guide1.html</p>
+</li>
+<li>
+<p>Koliasa, P. I. (2022). Formuvannia hrafichnoi kompetentnosti maibutnikh inzheneriv-pedahohiv zasobamy tsyfrovykh tekhnolohii [Formation of Graphic Competence of Future Engineering Educators by Means of Digital Technologies] (Doctoral dissertation). Ternopilskyi natsionalnyi pedahohichnyi universytet im. V. Hnatiuka, Ternopil. (in Ukrainian). Retrieved from <a href="https://tnpu.edu.ua/naukova-robota/docaments-download/razovi_rady/dis_Kojaljasa.pdf">https://tnpu.edu.ua/naukova-robota/docaments-download/razovi_rady/dis_Kojaljasa.pdf</a></p>
+</li>
+<li>
+<p>Launay, L. (1933). Un grand français. Monge. Fondateur de l'École Polytechnique. Paris: Éditions Pierre Roger, 280 p. Retrieved from <a href="https://www.annales.org/archives/x/monge0.html">https://www.annales.org/archives/x/monge0.html</a></p>
+</li>
+<li>
+<p>Mumford, L. (1971). Myth of the machine: Technics and human development. Mariner Books.</p>
+</li>
+<li>
+<p>Protsenko, O., Ushno, I., &#x26; Komkova, L. (2024). Imidzhevi stratehii v kultur-komunikatyvnomu prostori suspilstva [Image Strategies in the Cultural and Communicative Space of Society]. Visnyk Lvivskoho universytetu. Seriia filos.-politoloh. studii, (55), 157-162 (in Ukrainian). <a href="https://doi.org/10.30970/PPS.2024.55.18">https://doi.org/10.30970/PPS.2024.55.18</a></p>
+</li>
+</ol>
+<!-- Meanless: 13--><!-- Meanless: ISSN 2617-1929 (print). Studies in History and Philosophy of Science and Technology. Vol 34 (1). 2025-->
+<ol start="8">
+<li>
+<p>Simondon, G. (1989). Du mode d'existence des objets techniques (Nouvelle éd. revue et corrigée). Paris: Aubier. Retrieved from <a href="https://monoskop.org/images/2/20/Simondon_Gilbert_Du_mode_d">https://monoskop.org/images/2/20/Simondon_Gilbert_Du_mode_d</a>_ existence_des_objetstechniques_1989.pdf</p>
+</li>
+<li>
+<p>Terokhina, O. L. (2017). Formuvannia tekhnichnoho myslennia maibutnikh bakalavriv mashynobuduvannia u protsesi fakhovoi pidhotovky [Formation of Technical Thinking in Future Mechanical Engineering Bachelors During Professional Training]. Zaporizhzhia: ZNTU. (in Ukrainian). Retrieved from <a href="https://eir.zp.edu.ua/server/api/core/bitstreams/9346993c-e789-">https://eir.zp.edu.ua/server/api/core/bitstreams/9346993c-e789-</a> 428c-8fb4-1b5f3dd7abdb/content</p>
+</li>
+<li>
+<p>Ushno, I. M. (2023). Filosofiia tekhniky ta tekhnolohii: istoryko-filosofskyi kontekst [Philosophy of Technology and Engineering: Historical and Philosophical Context]. Naukove piznannia: metodolohiia ta tekhnolohiia. Filosofia, 2(52), 30-36 (in Ukrainian). <a href="https://doi.org/10.24195/">https://doi.org/10.24195/</a> sk1561-</p>
+</li>
+</ol>
+<p>Received 14.02.2025</p>
+<p>Received in revised form 06.03.2025</p>
+<p>Accepted 12.03.2025 DOI: 10.15421/272502 YAK 1:930.19 (043.5)</p>
+<p>C. III. Aйтов</p>
+<p>Украйкськцй deржсавнцй унiɛерсцеемнауки i meхногоziй,Днiпро,Украйна</p>
+<h1>CMCTEMA ICTOPM4HO-AHTPOIIOJIONIYHMX ДисциплнугумАнIтАРномугоРизонтɪ СУЧАСНОВ ФIЛОСОФIÏ ICTOРIÏ</h1>
+<p>E-mail: <a href="mailto:aytovspartak@gmail.com">aytovspartak@gmail.com</a></p>
+<p>ORCID: <a href="https://orcid.org/0000-0001-9049-5868">https://orcid.org/0000-0001-9049-5868</a></p>
+<p>Анотаща.Метацia:таттйполягаев реконструкцй i встановленнi теоретичних особливостей i значушостi системи icторично-антропологiqних дисциплця,якутворилися улюдино- вимйрному горизонтi сучасной фiлосорй' icторй,та ïх впливу на розвиток фiлософсько- icторичних студй.Методолог𝚒я цей роботи включае принципи комплементарностi, структурностi,далогиностi. У рiqипц аналīзу проблемного поля прапй були застосованi методи: фытософськой герменевтики,системно-структурний, мiждисциплiнарний. Ре- зультатидослцикення.Науковий розвиток icторичной антропологйяксфери сучасной фiлософй icторйпризвйвдо генерування в йтеоретичному просторi системи дисциплiн, якi вивчаютъ окремй питання ментально-культурной пллощини минулого. Ця пiзнавальна трансформапiя значною мipою мотивуеться фылософськими i сопюкультурними реалiями постмодернйму.Суттевими факторами впливуна утворення icторично-антропологiчних дисциплинвиступаютъ постмодернicтсъкй теоретичнi пцхходи,якi спростовують логiчне мисленняякосновний елемент пйнання свйтута наявнiсть iвизначальне значення великих рйлософських i наукових концепийй i полiтичних iдеологiчних систем, метанаративыв. Вiдповiдновплив постмодернicтсъкой моделi на утворення й iнтелектуальнi властивостi системи icторично-антропологчних дисциплцн полягае в й пiзнавальному фокусуваннi на аналзаемоцйно-психологiqних факторй icторичних процесца i пiдвищеннi впливовостi осмислення окремих явици i чинникав,якi розгортаються в ментально-культурному гори- зонтi минулого.Система icторично-антропологцних дисциплцякасформуваласяутео- ретичному просторi ryманiтарной сучасной фiлософйй icторй, утворюскомплексний Interlektyaльний простр,який включае три когнiтивнi рiвнi: психологино-культурний,, свйтоглядно-культурний i ментально-демографiчний.Психологiчно-культурний рiвень</p>
+<!-- Meanless: 14-->
+      </body>
+    </html>
+  
