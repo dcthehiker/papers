@@ -1,0 +1,2873 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Doc2x-Export-Html-Result</title>
+        <style>
+            * {
+              padding: 0;
+              margin: 0;
+              box-sizing: border-box;
+            }
+             html {
+              line-height: 1.15; /* 1 */
+              -webkit-text-size-adjust: 100%; /* 2 */
+            }
+            body {
+              padding: 20px;
+              margin: 0;
+            }
+            main {
+              display: block;
+            }
+            h1 {
+              font-size: 2em;
+              margin: 0.67em 0;
+            }
+            hr {
+              box-sizing: content-box; /* 1 */
+              height: 0; /* 1 */
+              overflow: visible; /* 2 */
+            }
+            pre {
+              font-family: monospace, monospace; /* 1 */
+              font-size: 1em; /* 2 */
+            }
+            a {
+              background-color: transparent;
+            }
+            abbr[title] {
+              border-bottom: none; /* 1 */
+              text-decoration: underline; /* 2 */
+              text-decoration: underline dotted; /* 2 */
+            }
+            b,
+            strong {
+              font-weight: bolder;
+            }
+            code,
+            kbd,
+            samp {
+              font-family: monospace, monospace; /* 1 */
+              font-size: 1em; /* 2 */
+            }
+            small {
+              font-size: 80%;
+            }
+            sub,
+            sup {
+              font-size: 75%;
+              line-height: 0;
+              position: relative;
+              vertical-align: baseline;
+            }
+            sub {
+              bottom: -0.25em;
+            }
+            sup {
+              top: -0.5em;
+            }
+            img {
+              border-style: none;
+            }
+            button,
+            input,
+            optgroup,
+            select,
+            textarea {
+              font-family: inherit; /* 1 */
+              font-size: 100%; /* 1 */
+              line-height: 1.15; /* 1 */
+              margin: 0; /* 2 */
+            }
+            button,
+            input { /* 1 */
+              overflow: visible;
+            }
+            button,
+            select { /* 1 */
+              text-transform: none;
+            }
+            button,
+            [type="button"],
+            [type="reset"],
+            [type="submit"] {
+              -webkit-appearance: button;
+            }
+            button::-moz-focus-inner,
+            [type="button"]::-moz-focus-inner,
+            [type="reset"]::-moz-focus-inner,
+            [type="submit"]::-moz-focus-inner {
+              border-style: none;
+              padding: 0;
+            }
+            button:-moz-focusring,
+            [type="button"]:-moz-focusring,
+            [type="reset"]:-moz-focusring,
+            [type="submit"]:-moz-focusring {
+              outline: 1px dotted ButtonText;
+            }
+            fieldset {
+              padding: 0.35em 0.75em 0.625em;
+            }
+            legend {
+              box-sizing: border-box; /* 1 */
+              color: inherit; /* 2 */
+              display: table; /* 1 */
+              max-width: 100%; /* 1 */
+              padding: 0; /* 3 */
+              white-space: normal; /* 1 */
+            }
+            progress {
+              vertical-align: baseline;
+            }
+            textarea {
+              overflow: auto;
+            }
+            [type="checkbox"],
+            [type="radio"] {
+              box-sizing: border-box; /* 1 */
+              padding: 0; /* 2 */
+            }
+            [type="number"]::-webkit-inner-spin-button,
+            [type="number"]::-webkit-outer-spin-button {
+              height: auto;
+            }
+            [type="search"] {
+              -webkit-appearance: textfield; /* 1 */
+              outline-offset: -2px; /* 2 */
+            }
+            [type="search"]::-webkit-search-decoration {
+              -webkit-appearance: none;
+            }
+            ::-webkit-file-upload-button {
+              -webkit-appearance: button; /* 1 */
+              font: inherit; /* 2 */
+            }
+            details {
+              display: block;
+            }
+            summary {
+              display: list-item;
+            }
+            [hidden] {
+              display: none;
+            }
+             table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+              }
+              table thead {
+                background-color: #e5e5e5;
+              }
+              table td {
+                padding: 8px;
+                /*background-color: #e5e5e5;*/
+                border: 1px solid #ccc; /* 可选，添加边框样式 */
+              }
+              table th {
+                padding: 8px;
+                /*background-color: #e5e5e5;*/
+                border: 1px solid #ccc; /* 可选，添加边框样式 */
+              }
+              h1, h2, h3, h4, h5, h6 {
+                margin-bottom: 20px;
+              }
+              p {
+                margin-top: 20px;
+                text-indent: 2em;
+                margin-bottom: 20px;
+              }
+        </style>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <style>
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c31::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "1";
+}
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-mrow {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mo {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-stretchy-h {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-stretchy-h > * {
+  display: table-cell;
+  width: 0;
+}
+
+mjx-stretchy-h > * > mjx-c {
+  display: inline-block;
+  transform: scalex(1.0000001);
+}
+
+mjx-stretchy-h > * > mjx-c::before {
+  display: inline-block;
+  width: initial;
+}
+
+mjx-stretchy-h > mjx-ext {
+  /* IE */ overflow: hidden;
+  /* others */ overflow: clip visible;
+  width: 100%;
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c::before {
+  transform: scalex(500);
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c {
+  width: 0;
+}
+
+mjx-stretchy-h > mjx-beg > mjx-c {
+  margin-right: -.1em;
+}
+
+mjx-stretchy-h > mjx-end > mjx-c {
+  margin-left: -.1em;
+}
+
+mjx-stretchy-v {
+  display: inline-block;
+}
+
+mjx-stretchy-v > * {
+  display: block;
+}
+
+mjx-stretchy-v > mjx-beg {
+  height: 0;
+}
+
+mjx-stretchy-v > mjx-end > mjx-c {
+  display: block;
+}
+
+mjx-stretchy-v > * > mjx-c {
+  transform: scaley(1.0000001);
+  transform-origin: left center;
+  overflow: hidden;
+}
+
+mjx-stretchy-v > mjx-ext {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0px solid transparent;
+  /* IE */ overflow: hidden;
+  /* others */ overflow: visible clip;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c::before {
+  width: initial;
+  box-sizing: border-box;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c {
+  transform: scaleY(500) translateY(.075em);
+  overflow: visible;
+}
+
+mjx-mark {
+  display: inline-block;
+  height: 0px;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mi {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mover {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mover:not([limits="false"]) {
+  padding-top: .1em;
+}
+
+mjx-mover:not([limits="false"]) > * {
+  display: block;
+  text-align: left;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c5B::before {
+  padding: 0.75em 0.278em 0.25em 0;
+  content: "[";
+}
+
+mjx-c.mjx-c31::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "1";
+}
+
+mjx-c.mjx-c2C::before {
+  padding: 0.121em 0.278em 0.194em 0;
+  content: ",";
+}
+
+mjx-c.mjx-c32::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "2";
+}
+
+mjx-c.mjx-c33::before {
+  padding: 0.665em 0.5em 0.022em 0;
+  content: "3";
+}
+
+mjx-c.mjx-c34::before {
+  padding: 0.677em 0.5em 0 0;
+  content: "4";
+}
+
+mjx-c.mjx-c5D::before {
+  padding: 0.75em 0.278em 0.25em 0;
+  content: "]";
+}
+
+mjx-c.mjx-c1D45F.TEX-I::before {
+  padding: 0.442em 0.451em 0.011em 0;
+  content: "r";
+}
+
+mjx-c.mjx-cAF::before {
+  padding: 0.59em 0.5em 0 0;
+  content: "\AF";
+}
+
+mjx-c.mjx-c1D462.TEX-I::before {
+  padding: 0.442em 0.572em 0.011em 0;
+  content: "u";
+}
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-mi {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mover {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mover:not([limits="false"]) {
+  padding-top: .1em;
+}
+
+mjx-mover:not([limits="false"]) > * {
+  display: block;
+  text-align: left;
+}
+
+mjx-mo {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-stretchy-h {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-stretchy-h > * {
+  display: table-cell;
+  width: 0;
+}
+
+mjx-stretchy-h > * > mjx-c {
+  display: inline-block;
+  transform: scalex(1.0000001);
+}
+
+mjx-stretchy-h > * > mjx-c::before {
+  display: inline-block;
+  width: initial;
+}
+
+mjx-stretchy-h > mjx-ext {
+  /* IE */ overflow: hidden;
+  /* others */ overflow: clip visible;
+  width: 100%;
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c::before {
+  transform: scalex(500);
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c {
+  width: 0;
+}
+
+mjx-stretchy-h > mjx-beg > mjx-c {
+  margin-right: -.1em;
+}
+
+mjx-stretchy-h > mjx-end > mjx-c {
+  margin-left: -.1em;
+}
+
+mjx-stretchy-v {
+  display: inline-block;
+}
+
+mjx-stretchy-v > * {
+  display: block;
+}
+
+mjx-stretchy-v > mjx-beg {
+  height: 0;
+}
+
+mjx-stretchy-v > mjx-end > mjx-c {
+  display: block;
+}
+
+mjx-stretchy-v > * > mjx-c {
+  transform: scaley(1.0000001);
+  transform-origin: left center;
+  overflow: hidden;
+}
+
+mjx-stretchy-v > mjx-ext {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0px solid transparent;
+  /* IE */ overflow: hidden;
+  /* others */ overflow: visible clip;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c::before {
+  width: initial;
+  box-sizing: border-box;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c {
+  transform: scaleY(500) translateY(.075em);
+  overflow: visible;
+}
+
+mjx-mark {
+  display: inline-block;
+  height: 0px;
+}
+
+mjx-mrow {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-msup {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c1D45B.TEX-I::before {
+  padding: 0.442em 0.6em 0.011em 0;
+  content: "n";
+}
+
+mjx-c.mjx-cAF::before {
+  padding: 0.59em 0.5em 0 0;
+  content: "\AF";
+}
+
+mjx-c.mjx-c1D44E.TEX-I::before {
+  padding: 0.441em 0.529em 0.01em 0;
+  content: "a";
+}
+
+mjx-c.mjx-c1D45F.TEX-I::before {
+  padding: 0.442em 0.451em 0.011em 0;
+  content: "r";
+}
+
+mjx-c.mjx-c1D462.TEX-I::before {
+  padding: 0.442em 0.572em 0.011em 0;
+  content: "u";
+}
+
+mjx-c.mjx-c28::before {
+  padding: 0.75em 0.389em 0.25em 0;
+  content: "(";
+}
+
+mjx-c.mjx-c1D45D.TEX-I::before {
+  padding: 0.442em 0.503em 0.194em 0;
+  content: "p";
+}
+
+mjx-c.mjx-c29::before {
+  padding: 0.75em 0.389em 0.25em 0;
+  content: ")";
+}
+
+mjx-c.mjx-c5B::before {
+  padding: 0.75em 0.278em 0.25em 0;
+  content: "[";
+}
+
+mjx-c.mjx-c31::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "1";
+}
+
+mjx-c.mjx-c35::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "5";
+}
+
+mjx-c.mjx-c2C::before {
+  padding: 0.121em 0.278em 0.194em 0;
+  content: ",";
+}
+
+mjx-c.mjx-c36::before {
+  padding: 0.666em 0.5em 0.022em 0;
+  content: "6";
+}
+
+mjx-c.mjx-c37::before {
+  padding: 0.676em 0.5em 0.022em 0;
+  content: "7";
+}
+
+mjx-c.mjx-c5D::before {
+  padding: 0.75em 0.278em 0.25em 0;
+  content: "]";
+}
+
+mjx-c.mjx-c32::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "2";
+}
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-mi {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c1D434.TEX-I::before {
+  padding: 0.716em 0.75em 0 0;
+  content: "A";
+}
+
+mjx-c.mjx-c1D435.TEX-I::before {
+  padding: 0.683em 0.759em 0 0;
+  content: "B";
+}
+
+mjx-c.mjx-c1D436.TEX-I::before {
+  padding: 0.705em 0.76em 0.022em 0;
+  content: "C";
+}
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-mrow {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mo {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-stretchy-h {
+  display: inline-table;
+  width: 100%;
+}
+
+mjx-stretchy-h > * {
+  display: table-cell;
+  width: 0;
+}
+
+mjx-stretchy-h > * > mjx-c {
+  display: inline-block;
+  transform: scalex(1.0000001);
+}
+
+mjx-stretchy-h > * > mjx-c::before {
+  display: inline-block;
+  width: initial;
+}
+
+mjx-stretchy-h > mjx-ext {
+  /* IE */ overflow: hidden;
+  /* others */ overflow: clip visible;
+  width: 100%;
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c::before {
+  transform: scalex(500);
+}
+
+mjx-stretchy-h > mjx-ext > mjx-c {
+  width: 0;
+}
+
+mjx-stretchy-h > mjx-beg > mjx-c {
+  margin-right: -.1em;
+}
+
+mjx-stretchy-h > mjx-end > mjx-c {
+  margin-left: -.1em;
+}
+
+mjx-stretchy-v {
+  display: inline-block;
+}
+
+mjx-stretchy-v > * {
+  display: block;
+}
+
+mjx-stretchy-v > mjx-beg {
+  height: 0;
+}
+
+mjx-stretchy-v > mjx-end > mjx-c {
+  display: block;
+}
+
+mjx-stretchy-v > * > mjx-c {
+  transform: scaley(1.0000001);
+  transform-origin: left center;
+  overflow: hidden;
+}
+
+mjx-stretchy-v > mjx-ext {
+  display: block;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0px solid transparent;
+  /* IE */ overflow: hidden;
+  /* others */ overflow: visible clip;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c::before {
+  width: initial;
+  box-sizing: border-box;
+}
+
+mjx-stretchy-v > mjx-ext > mjx-c {
+  transform: scaleY(500) translateY(.075em);
+  overflow: visible;
+}
+
+mjx-mark {
+  display: inline-block;
+  height: 0px;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-TeXAtom {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-mn {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("https://doc2x.noedgeai.com/ajax/libs/mathjax/v3.2.2/es5/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c5B::before {
+  padding: 0.75em 0.278em 0.25em 0;
+  content: "[";
+}
+
+mjx-c.mjx-c31::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "1";
+}
+
+mjx-c.mjx-c2C::before {
+  padding: 0.121em 0.278em 0.194em 0;
+  content: ",";
+}
+
+mjx-c.mjx-c32::before {
+  padding: 0.666em 0.5em 0 0;
+  content: "2";
+}
+
+mjx-c.mjx-c5D::before {
+  padding: 0.75em 0.278em 0.25em 0;
+  content: "]";
+}
+
+</style>
+      </head>
+      <body style="padding: 40px;">
+        <!-- Meanless: Journal of Physics: PURPOSE-LED Conference Series PUBLISHING You may also like - Biological arrow of time: emergence of tangled information hierarchies and self- Mikhail Prokopenko, Paul C W Davies, Michael Harré et al. - Determining The Causation Probability of Ship Collision in the Barito River Using Fault Tree analysis (FTA) & Bayesian Network Modelling Diyah Purwitasari, Ketut Buda Artana, Dhimas Widhi Handani et al. - Inherent uncertainty disguises attribution of reduced atmospheric \( {\mathrm{{CO}}}_{o} \) growth to \( {\mathrm{{CO}}}_{2} \) emission reductions for up to a decade Aaron Spring, Tatiana Ilyina and Jochem Marotzke-->
+<p>PAPER - OPEN ACCESS</p>
+<h2>The Model of Consciousness: An Analysis of Causation, Self, Gödel's Incompleteness, and Buddhist Philosophy</h2>
+<p>To cite this article: Mahendra Samarawickrama 2025 J. Phys.: Conf. Ser. 3027 012014</p>
+<p>View the article online for updates and enhancements.</p>
+<!-- Media -->
+<p>to save $$ REGISTER NOW</p>
+<p>This content was downloaded from IP address 139.162.72.126 on 05/07/2025 at 04:58</p>
+<!-- Media -->
+<!-- Meanless: UNITED THROUGH SCIENCE & TECHNOLOGY ECS The Electrochemical Society Science + Advancing solid state & electrochemical science & technology Technology + 248th YOU! ECS Meeting Chicago, IL October 12-16, 2025 Hilton Chicago Register by September 22--><!-- Meanless: 13th International Conference on Mathematical Modeling in Physical Sciences IOP Publishing Journal of Physics: Conference Series 3027(2025) 012014 doi:10.1088/1742-6596/3027/1/012014-->
+<h1>The Model of Consciousness: An Analysis of Causation, Self, Gödel's Incompleteness, and Buddhist Philosophy</h1>
+<p>Mahendra Samarawickrama</p>
+<p>Centre for Consciousness Studies, Australia</p>
+<p>School of Computer Science, The University of Technology Sydney (UTS), Australia</p>
+<p>E-mail: <a href="mailto:samarawickrama@gmail.com">samarawickrama@gmail.com</a></p>
+<p>Abstract. This paper examines the limitations of analytical and computational methods in understanding reality, highlighting the secondary role of language and mathematics, which often leads to paradoxes. Gödel's incompleteness theorems underscore the inherent incompleteness and undecidability in logical and computational systems, such as the Turing machine. We propose that consciousness, operating as a non-material and chaotic finite-state machine (FSM) devoid of self-referencing, can achieve a complete and decidable understanding of reality. This contrasts with the self-referencing nature of logical systems that leads to paradoxes and limitations. Through a conceptual model of the mind inspired by Theravāda Buddhist philosophy, we suggest that awareness of causation is free from self-referencing and coherent with the unpredictable yet causal and deterministic nature of reality. This alignment offers a pathway to a deeper and more comprehensive understanding of causation. The model illustrates the tight integrity between consciousness and causation, proposing that awareness of the present moment of causation can transcend the limitations of Gödel's incompleteness theorems. This awareness, free from analytical and computational constraints, preserves the integrity of conscious experience and provides a complete and decidable understanding of reality. Future research will focus on developing techniques to sustain this awareness, potentially leading to wisdom and deep insight into the fundamental nature of existence.</p>
+<h2>1. Introduction</h2>
+<p>The mathematical formulation of reality <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{1}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>1</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> limits our comprehension of it. In contemporary research on the mind, the inherent biases in language and mathematics have been extensively analysed [1, 2]. The mathematical and logical constructs diverge from fundamental experience. What is conveyed in communication is a secondary interpretation underpinned by various biases.</p>
+<p>Mathematicians establish axioms to translate observations into computational, analytical, and simulation models [3]. The Turing machine [4] represents one such method that translates rules and axioms to execute computations aimed at problem-solving. Before Gödel's incompleteness theorems [5] and Turing's work on the halting problem [4], many mathematicians believed that any problem could be interpreted and solved mathematically using such machines, presuming completeness and decidability in computations.</p>
+<p>Later, Gödel's incompleteness theorems [5] challenged the completeness and decidability of rule- and axiom-based systems. This proved that our understanding of mathematical formulation and computations is incomplete. It posits that undecidable or unprovable knowledge exists within solutions. Gödel's incompleteness theorems assert that in any sufficiently powerful formal system of mathematics capable of expressing basic arithmetic (such as Peano arithmetic), there are true statements that cannot be proven within the system. The theorems indicate that this incompleteness or undecidability stems from self-references in the rules and axioms of the system. These self-referential statements give rise to paradoxes and constrain formal systems from fully describing themselves.</p>
+<hr>
+<!-- Footnote -->
+<p><mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{1}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>1</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> In this paper,we limit our exploration to causal reality (see Figure 1). Buddhism affirms the existence of non-causal reality mutually exclusive from both material and mental realms [1].</p>
+<!-- Footnote -->
+<hr>
+<!-- Meanless: ① Content from this work may be used under the terms of the Creative Commons Attribution 4.0 licence. Any further distribution of this work must maintain attribution to the author(s) and the title of the work, journal citation and DOI. Published under licence by IOP Publishing Ltd 1--><!-- Meanless: 13th International Conference on Mathematical Modeling in Physical Sciences IOP Publishing Journal of Physics: Conference Series 3027 (2025) 012014 doi:10.1088/1742-6596/3027/1/012014-->
+<p>When understanding reality and how things behave in nature, causation plays a crucial role. Some believe causation is primitive, basic or fundamental, while others argue it is derivative, a construct or a byproduct. As per David Hume and Simon Blackburn [6], causation is patterns composed by the human mind in response to regularities in nature. From their viewpoint, the explanation of the cause and effect is unknown, but how things behave can be analysed. Further, causation is not part of reality but a human construct that depends on the laws of nature. In contrast, Richard Swinburne [7] argues causation is a fundamental of reality. Causation cannot be explained by anything else, such as patterns, regularities or laws in nature. Similarly, Robin Le Poidevin [8] describes causation as primitive, which cannot be explained by other constructs or concepts. In fact, the other concept can be explained by causation. Most notably, he argued that time is derived from a change and attributed to cause and effect. That is, to the direction of cause and effect, time flows. However, Huw Price [9] argues that laws of physics do not explain the direction of time, and backward causality is also possible.</p>
+<p>A common feature across many causal philosophies is the notion of self-reference or subjective experience. It is believed that the brain's highly recursive neural network, fundamental to logic, language, and axioms, brings forth this perspective [10]. This intrinsic recursion gives rise to self-referential mindsets, perceptions, and philosophies, thereby making axioms, mathematics, analysis, and computations inherently incomplete and undecidable. In contrast, in Theravāda Buddhist philosophy, reality is governed by both simultaneous and forward causation, reflecting interdependent relationships and cause-and-effect <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="\left\lbrack  {{11},{12},{13},{14}}\right\rbrack"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mrow><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-texatom texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c31"></mjx-c></mjx-mn></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c33"></mjx-c></mjx-mn></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c34"></mjx-c></mjx-mn></mjx-texatom></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">[</mo><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mn>11</mn></mrow><mo>,</mo><mrow data-mjx-texclass="ORD"><mn>12</mn></mrow><mo>,</mo><mrow data-mjx-texclass="ORD"><mn>13</mn></mrow><mo>,</mo><mrow data-mjx-texclass="ORD"><mn>14</mn></mrow></mrow><mo data-mjx-texclass="CLOSE">]</mo></mrow></math></mjx-assistive-mml></mjx-container> . In this view,no state is self-referencing,and each cause leads to a unique effect, highlighting a deterministic progression from one state to the next. However, while the progression is deterministic, future states can still be unpredictable, leading to a chaotic system. Therefore, even though logic, mathematics, language, and computations are incomplete and undecidable, reality, underpinned by causation, is complete and decidable. Incompleteness and undecidability emerge from the self-referencing axioms, definitions, and rules of the states that happen in brain cognition and not in causation.</p>
+<p>In the exploration of causation, contemporary research [15, 16, 17] discusses how consciousness underpins integrity in change and the behaviour of reality. Consciousness has been modelled in the process of integrating it into the behaviour of reality [15]. The model proposed that consciousness is intricately interwoven with reality and maintains integrity with the behaviour of reality. Furthermore, everything is subject to change while maintaining integrity with underlying consciousness. The integrity of the behaviour of reality, perceived through awareness, is attributed to consciousness. This integrity is causal, deterministic, and unpredictable due to complexity. The research suggests that the mind is fundamental and underpins causation. The reality we analyse and describe is a perception that has been subjected to transformation and bias and is a mental illusion constructed by the mind [1].</p>
+<p>In this study, we investigate the feasibility of transcending self-referencing to achieve a complete and decidable understanding of reality. We explore the role of consciousness in causation and the emergence of secondary constructs within mental causation. Building on Theravāda Buddhist philosophy of consciousness, contemporary research, and new postulates, we developed a model of consciousness to examine the emergence of self-referencing. Furthermore, we propose a methodology to overcome self-referencing to attain a complete and decidable comprehension of reality.</p>
+<h2>2. Methodology</h2>
+<p>First, we want to clarify the terms used in this research. There exist three fundamental forms of reality: nāmarealm, rūparealm and Nibbāna [1, 18, 19, 20]. In this research, we limit our exploration to causal reality (see Figure 1). The term rūparealm refers to the true physical reality that exists independently of the mind. Mind <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{2}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> ,as a high-level abstraction term,exists independently of <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="r\bar{u}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.544em;"><mjx-mo class="mjx-n" style="width: 0; margin-left: -0.25em;"><mjx-c class="mjx-cAF"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi><mrow data-mjx-texclass="ORD"><mover><mi>u</mi><mo stretchy="false">¯</mo></mover></mrow></math></mjx-assistive-mml></mjx-container> parealm,which we use to convey broad concepts of the mental realm, referred to as nāmarealm. Although mind and rūparealm exist independently and have fundamental differences, they interplay and create the perceived causal reality. The mind is driven by the consciousness cycle, a binary pulse that makes the consciousness sequential [15]. Each consciousness cycle emerges in the mind with non-separable consciousness concomitants or mental factors that underpin feelings, perception, and mental formations. While the mind is an abstract term, consciousness and mental factors are fundamental components of how the mind functions.</p>
+<!-- Meanless: 2--><!-- Meanless: 13th International Conference on Mathematical Modeling in Physical Sciences IOP Publishing Journal of Physics: Conference Series 3027 (2025) 012014 doi:10.1088/1742-6596/3027/1/012014-->
+<!-- Media -->
+<!-- figureText: Causation Reality Nibbāna Consciousness Concomitants (Mental Factors) Rüpa Nama (Rūparealm) (Nāmarealm) Mind Consciousness -->
+<img src="https://cdn.noedgeai.com/bo_d1ka6l3ef24c73dgigf0_3.jpg?x=403&#x26;y=319&#x26;w=835&#x26;h=744&#x26;r=0">
+<p>Figure 1: The fourfold ultimate realities are represented by the leaf nodes of the tree diagram [1]. Nibbāna exists as a unique, non-causal reality, while the nāmarealm and rūparealm are causal realities governed by the principle of causation. The nāmarealm consists of a single stream of consciousness and is a sequential process where each consciousness cycle with focus inseparably emerges with a harmonious subset from the consciousness concomitants or mental factors. The term Mind is sometimes used as a single word to represent the entirety of the non-material <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="n\bar{a}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45B TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.265em; margin-bottom: -0.544em;"><mjx-mo class="mjx-n" style="width: 0; margin-left: -0.25em;"><mjx-c class="mjx-cAF"></mjx-c></mjx-mo></mjx-over><mjx-base style="padding-top: 0.001em;"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mrow data-mjx-texclass="ORD"><mover><mi>a</mi><mo stretchy="false">¯</mo></mover></mrow></math></mjx-assistive-mml></mjx-container> marealm. In contrast,the <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="r\bar{u}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.544em;"><mjx-mo class="mjx-n" style="width: 0; margin-left: -0.25em;"><mjx-c class="mjx-cAF"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi><mrow data-mjx-texclass="ORD"><mover><mi>u</mi><mo stretchy="false">¯</mo></mover></mrow></math></mjx-assistive-mml></mjx-container> parealm consists of diverse types of materiality <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="\left( {r\bar{u}{pa}}\right)"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mrow><mjx-mo class="mjx-n"><mjx-c class="mjx-c28"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45F TEX-I"></mjx-c></mjx-mi><mjx-texatom texclass="ORD"><mjx-mover><mjx-over style="padding-bottom: 0.105em; padding-left: 0.314em; margin-bottom: -0.544em;"><mjx-mo class="mjx-n" style="width: 0; margin-left: -0.25em;"><mjx-c class="mjx-cAF"></mjx-c></mjx-mo></mjx-over><mjx-base><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D462 TEX-I"></mjx-c></mjx-mi></mjx-base></mjx-mover></mjx-texatom><mjx-texatom texclass="ORD"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D45D TEX-I"></mjx-c></mjx-mi><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D44E TEX-I"></mjx-c></mjx-mi></mjx-texatom></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c29"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">(</mo><mrow data-mjx-texclass="ORD"><mi>r</mi><mrow data-mjx-texclass="ORD"><mover><mi>u</mi><mo stretchy="false">¯</mo></mover></mrow><mrow data-mjx-texclass="ORD"><mi>p</mi><mi>a</mi></mrow></mrow><mo data-mjx-texclass="CLOSE">)</mo></mrow></math></mjx-assistive-mml></mjx-container> .</p>
+<!-- Media -->
+<p>Consciousness is non-material and fundamental to reality. Consciousness cannot be reduced to the brain or any other physical construct, as suggested by reductionism. This non-material aspect of consciousness governs the non-local reality [17]. Therefore, the interaction of consciousness is unavoidable when one fully realises reality. Contemporary research suggests that consciousness is a sequential process that relates to a single state of reality at a given instant and underpins awareness when the process continues <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="\left\lbrack  {{15},{16},{17}}\right\rbrack"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mrow><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-texatom texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c35"></mjx-c></mjx-mn></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c36"></mjx-c></mjx-mn></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-texatom space="2" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c><mjx-c class="mjx-c37"></mjx-c></mjx-mn></mjx-texatom></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">[</mo><mrow data-mjx-texclass="ORD"><mrow data-mjx-texclass="ORD"><mn>15</mn></mrow><mo>,</mo><mrow data-mjx-texclass="ORD"><mn>16</mn></mrow><mo>,</mo><mrow data-mjx-texclass="ORD"><mn>17</mn></mrow></mrow><mo data-mjx-texclass="CLOSE">]</mo></mrow></math></mjx-assistive-mml></mjx-container> . Further,they propose that the mind or consciousness cycle is the shortest duration for an observer to be aware of the change in reality.</p>
+<p>Drawing from recent research [15, 16, 17], we propose a model of consciousness by postulating:</p>
+<hr>
+<!-- Footnote -->
+<p><mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="{}^{2}"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-msup><mjx-texatom texclass="ORD"></mjx-texatom><mjx-script style="vertical-align: 0.363em;"><mjx-texatom size="s" texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom></mjx-script></mjx-msup></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow data-mjx-texclass="ORD"></mrow><mrow data-mjx-texclass="ORD"><mn>2</mn></mrow></msup></math></mjx-assistive-mml></mjx-container> Throughout this research,the mind we refer to is the individual mind,which serves as the foundation for subjective experiences, distinct from any cosmic or supernatural concept.</p>
+<!-- Footnote -->
+<hr>
+<!-- Meanless: 3--><!-- Meanless: 13th International Conference on Mathematical Modeling in Physical Sciences IOP Publishing Journal of Physics: Conference Series 3027 (2025) 012014 doi:10.1088/1742-6596/3027/1/012014-->
+<p>(i) Consciousness is a fundamental dimension in reality that underpins causation and is non-material.</p>
+<p>(ii) Consciousness is a chaotic process, meaning it is causal, deterministic, and unpredictable.</p>
+<p>(iii) The chaotic process of consciousness is a sequential finite-state machine (FSM).</p>
+<p>(iv) This chaotic sequential FSM illustrates forward causation through state transitions from cause to effect. Simultaneous causation is reflected in the interdependent attributes within each state. It excludes backward causation and self-referencing states.</p>
+<p>(v) The chaotic sequential FSM of consciousness is complete and decidable.</p>
+<p>Even with an infinite input space that can be subject to awareness, consciousness operates within a finite number of states, which can be represented by a finite-state machine (FSM). The perception of infinitely diverse experiences arises from the complexity and diversity of the input space. Since consciousness is sequential and operates at extremely high speed, this mental experience is flawless and preserves integrity with our awareness.</p>
+<p>Consciousness is causal, deterministic and unpredictable. This chaotic nature of the consciousness FSM emerges due to input from the outside environment and the inherent complexity of the consciousness FSM itself. The completeness and decidable nature of consciousness emerged from the causation. Since the consciousness process is causal without self-referencing or backward causation, completeness in consciousness is not subject to Gödel's incompleteness theorems. Even though consciousness is chaotic due to its inputs, its function as an FSM is causal and deterministic, which completely decides its behaviours.</p>
+<h3>2.1. Finite-State Machine of the Mind</h3>
+<!-- Media -->
+<!-- figureText: 5 Sensors Mental Feedback Consciousness Concomitants (Mental Factors) Feeling, Perception, and Mental Formation I Sensory Input Mind Address Interface 几 Consciousness Chaotic FSM of the Mind Boundary of Mind and Rüparealm -->
+<img src="https://cdn.noedgeai.com/bo_d1ka6l3ef24c73dgigf0_4.jpg?x=285&#x26;y=1160&#x26;w=1072&#x26;h=737&#x26;r=0">
+<!-- Media -->
+<p>Figure 2: The chaotic sequential finite-state machine of the mind. A mental state is processed at each consciousness cycle, determined by the previous state and sensory input. While there are finite states in the mind that transition causally and deterministically, the future state is influenced by external input and feedback loops. This makes the finite-state machine unpredictable and, therefore, chaotic.</p>
+<!-- Meanless: 4--><!-- Meanless: 13th International Conference on Mathematical Modeling in Physical Sciences IOP Publishing Journal of Physics: Conference Series 3027(2025) 012014 doi:10.1088/1742-6596/3027/1/012014-->
+<p>The mind functions as a chaotic sequential finite-state machine (FSM) (see Figure 2). The consciousness cycle represents the shortest duration required to become aware of any changes in the causal reality (i.e., nāmarealm and rūparealm). The diagram illustrates an FSM where the future state is influenced by both external sensory input and an internal mental feedback loop. Although this FSM operates causally and deterministically, it becomes unpredictable due to the continuous input from the five external senses and the internal feedback loop, making it inherently chaotic. The FSM states in the mind underpin feelings, perceptions, mental formations, and actions (see Figure 3). A given state of the FSM can give rise to various feelings, perceptions, and mental formations, depending on the different external sensory inputs and the internal mental feedback, which follows a chaotic process.</p>
+<!-- Media -->
+<!-- figureText: Input: Sensory Input Mental Feedback State Y Feeling + Perception + Mental Formation State \( X \) Output: -->
+<img src="https://cdn.noedgeai.com/bo_d1ka6l3ef24c73dgigf0_5.jpg?x=341&#x26;y=667&#x26;w=971&#x26;h=236&#x26;r=0">
+<p>Figure 3: The chaotic transition process of the finite-state machine of consciousness. A given state of the FSM can be associated with diverse feelings, perceptions, and mental formations based on varying external sensory inputs and internal mental feedback.</p>
+<!-- figureText: Analytical and Logical State \( A \) Mindfulness on Causation Input \( {}_{\mathrm{{AC}}} \) Output \( {}_{\mathrm{{AC}}} \) State C Wisdom: Complete and Decidable Awareness Mind \( {\mathsf{{Input}}}_{\mathsf{{AB}}} \) \( {\text{Output}}_{\mathrm{{AB}}} \) State \( B \) Self-Referential Knowledge: Follows Gödel's Incompleteness Theorems -->
+<img src="https://cdn.noedgeai.com/bo_d1ka6l3ef24c73dgigf0_5.jpg?x=249&#x26;y=1157&#x26;w=1143&#x26;h=580&#x26;r=0">
+<p>Figure 4: State transition differentiating self-referencing and causation. With self-referencing, the finite-state machine (FSM) is incomplete and undecidable, whereas causal awareness brings completeness and decidability to the FSM of consciousness.</p>
+<!-- Media -->
+<p>Figure 4 demonstrates how state transitions occur in the mind on the different occasions of self-reference and causal awareness. In a given state <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="A"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D434 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>A</mi></math></mjx-assistive-mml></mjx-container> ,the state can transition to state <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="B"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D435 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>B</mi></math></mjx-assistive-mml></mjx-container> if the mind self-referenced on the input and states. In practice, when we analyse, model, and communicate, there is always self-referencing, as described in Gödel's incompleteness theorems. In contrast, if the mind is mindful of causation,the state transits towards state <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="C"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi></math></mjx-assistive-mml></mjx-container> . State <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="C"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mi class="mjx-i"><mjx-c class="mjx-c1D436 TEX-I"></mjx-c></mjx-mi></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>C</mi></math></mjx-assistive-mml></mjx-container> focuses on cause and effect,where the understanding of reality is complete and decidable.</p>
+<!-- Meanless: 5--><!-- Meanless: 13th International Conference on Mathematical Modeling in Physical Sciences IOP Publishing Journal of Physics: Conference Series 3027(2025) 012014 doi:10.1088/1742-6596/3027/1/012014-->
+<h2>3. Discussion</h2>
+<p>The intertwining of self-referencing and causation has long influenced philosophical outlooks worldwide. It leads to misconceptions about the fundamental nature of causality. In exploring causation and consciousness, Buddhism has made a significant contribution. Buddhism describes reality as inherently causal and rejects self-referencing, offering insights into this relationship. Buddhist teachings, exemplified by sakkāyaditthi, reject the notion of inherent selfhood, prompting a deeper inquiry into causality beyond the self-referential system [21]. A historical exchange between Arahant Mahinda and King Devanampiya-Tissa illustrates this intersection [22]. Arahant Mahinda is the son of Emperor Ashoka, who brought Buddhism to Sri Lanka in 253 BC. King Devanampiya-Tissa ruled Sri Lanka at that time. Arahant Mahinda's questions (denoted by M) about identity and relationships to check the intelligence of King Devanampiya-Tissa and the King's answers (denoted by KDT) challenged conventional awareness on reality:</p>
+<p>(i) M: "What is the name of this tree, King?" KDT: "This is a mango tree." (ii) M: "Are there more trees like this?" KDT: "Yes, there are many mango trees." (iii) M: "Are there other trees besides this mango tree and other mango trees?" KDT: "Yes, there are many other types of trees besides mango."</p>
+<p>(iv) M: "Are there other trees that are non-mango trees and other mango trees?" KDT: "There is this mango tree." (v) M: "Do you have relatives, King?" KDT: "Yes, I have many relatives." (vi) M: "Are there people who are not your relatives?" KDT: "There are many people who are not my relatives." (vii) M: "Are there people other than your relatives and non-relatives?" KDT: "Yes. That would be me, sir" (viii) M: "Good! You are intelligent enough to listen to the Dhamma."</p>
+<p>Through this dialogue, the king demonstrated his awareness of self-referential knowledge. The questions posed reflect the essence of Russell's paradox [23, 24], revealing the limitations of self-referencing in set theory, a concept later generalised by Gödel's incompleteness theorem to apply to all logical systems. By listening to the follow-up Dhamma, the king gained wisdom on causation that transcends the notion of the self. This narrative emphasises the importance of critically examining self-referencing tendencies to improve our understanding of causality.</p>
+<p>The profound awareness of causation requires the transcendence of the self. Buddha elucidated this in Bāhiya Sutta [25]. That offers a compelling perspective on perceiving causation in reality. While Bāhiya is not a monk or an avid meditator, his instantaneous attainment of enlightenment following a teaching of causation from the Buddha underscores the potency of this concept. The Buddha's instruction to Bāhiya, "Bāhiya, you should train yourself thus: in the seen will be merely what is seen; in the heard will be merely what is heard; in the sensed will be merely what is sensed; in the cognised will be merely what is cognised,". By recognising the causation, individuals can surpass self-referencing and attain profound wisdom of the presence of existence.</p>
+<p>Any logical system having self-referencing moves into paradox, which Buddha discussed in his first sermon Dhammacakkappavattana Sutta [26]. As per Dhammacakkappavattana Sutta, there are always true and false extremes which should be avoided through wisdom. These extremes should be transcended through the middle way, focusing on causation through meditation without analysing it. Because wisdom is devoid of analysis, the right understanding cannot be communicated in a language, analytical or logical framework <mjx-container class="MathJax" jax="CHTML" style="position: relative;" data-latex="\left\lbrack  {1,2}\right\rbrack"><mjx-math class="MJX-TEX" aria-hidden="true"><mjx-mrow><mjx-mo class="mjx-n"><mjx-c class="mjx-c5B"></mjx-c></mjx-mo><mjx-texatom texclass="ORD"><mjx-mn class="mjx-n"><mjx-c class="mjx-c31"></mjx-c></mjx-mn><mjx-mo class="mjx-n"><mjx-c class="mjx-c2C"></mjx-c></mjx-mo><mjx-mn class="mjx-n" space="2"><mjx-c class="mjx-c32"></mjx-c></mjx-mn></mjx-texatom><mjx-mo class="mjx-n"><mjx-c class="mjx-c5D"></mjx-c></mjx-mo></mjx-mrow></mjx-math><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">[</mo><mrow data-mjx-texclass="ORD"><mn>1</mn><mo>,</mo><mn>2</mn></mrow><mo data-mjx-texclass="CLOSE">]</mo></mrow></math></mjx-assistive-mml></mjx-container> . Wisdom should be realised by the individual through their own conscious fundamental experience individually. The same concept is discussed in Gödel's incompleteness theorems, which states that in any sufficiently powerful formal system of mathematics capable of expressing basic arithmetic, there are true statements that cannot be proven within the system. While Gödel didn't explain how to overcome this fundamental paradox, he explained that self-referencing is the root cause of this limitation. Following the delivery of the Dhammacakkappavattana Sutta, in his second sermon Anattalakkhana Sutta, Buddha stated that one who sees the truth transcends the self or sakkāyaditthi [21]. While Gödel's incompleteness theorems highlight that self-referencing imposes limitations in both mathematics and formal logic, Buddha taught that self-referencing the five aggregates-form, feeling, perception, mental formation, and consciousness-limits the understanding of reality, leading to attachments and, consequently, suffering [27, 19].</p>
+<!-- Meanless: 6--><!-- Meanless: 13th International Conference on Mathematical Modeling in Physical Sciences IOP Publishing Journal of Physics: Conference Series 3027 (2025) 012014 doi:10.1088/1742-6596/3027/1/012014-->
+<p>In our previous model of consciousness [15, 16, 17], we postulated that:</p>
+<p>(i) Only consciousness and change are the fundamentals of reality,</p>
+<p>(ii) Consciousness is a sequential process that relates to a single state of reality at a given instant and underpins awareness when the process continues,</p>
+<p>(iii) Consciousness cycle is the shortest duration to be aware of the change of reality through awareness,</p>
+<p>(iv) Consciousness constructs space-time based on awareness and underpins causation by interplay with matter and energy, which is perceived as rūparealm.</p>
+<p>In none of the above postulates on consciousness is the notion of self or being present. Consciousness and change govern reality as a cause-and-effect process, or causation. As this causal process continues, it constructs awareness. Reality behaves in such a way that awareness is preserved, maintaining the integrity of conscious experience. Without being mindful of causation, the notions of observer, self, and self-awareness emerge. The notion of self and observer introduces self-references, which underpin languages, axioms, mathematics, logic, arguments, and various other frameworks. Any system underpinned by such self-referencing frameworks follows Gödel's formal system and becomes incomplete and undecidable. In contrast, if awareness is focused on causation, there will be no self-references, resulting in a complete and decidable understanding.</p>
+<h2>4. Conclusion</h2>
+<p>Consciousness enables the comprehension of causation. One who is mindful of consciousness experiences the causation. The awareness of the fundamental experience in the present moment in the mind, devoid of analysis or computation, is free from self-referencing and transcends Gödel's incompleteness and undecidability of reality. However, consciousness is inherently chaotic (i.e., causal, deterministic, and unpredictable), making causation also chaotic and our understanding constrained by this chaotic nature of reality. This means that reality is unpredictable, yet understanding is complete and decidable from moment to moment through the awareness of causation. Analysis and computations lead to the loss of mindfulness of causation, constructing secondary concepts with self-references, and creating incompleteness and undecidability. In the future, we will analyse possible techniques to make us mindful of the fundamental mental experience of causation without analysis and computations, leading to wisdom. References</p>
+<p>[1] M. Samarawickrama, "The mind, experience, observation, and reality: A framework and technique for fundamental experience of Rūparealm," Proceedings of the 13th International Conference on Mathematical Modeling in Physical Sciences, September 2024.</p>
+<p>[2] M. Samarawickrama, "Consciousness and mathematics: A number theoretic approach to modelling reality," Proceedings of the 13th International Conference on Mathematical Modeling in Physical Sciences, September 2024.</p>
+<p>[3] D. Hilbert, "Mathematische probleme," Archiv der Mathematik und Physik, vol. 1, no. 1, pp. 44-63, 1901.</p>
+<p>[4] A. M. Turing, "On computable numbers, with an application to the entscheidungsproblem," Proceedings of the London Mathematical Society, vol. 2, no. 42, pp. 230-265, 1937.</p>
+<p>[5] K. Gödel, "Über formal unentscheidbare sätze der principia mathematica und verwandter systeme i," Monatshefte für Mathematik und Physik, vol. 38, no. 1, pp. 173-198, 1931.</p>
+<!-- Meanless: 7--><!-- Meanless: 13th International Conference on Mathematical Modeling in Physical Sciences IOP Publishing Journal of Physics: Conference Series 3027 (2025) 012014 doi:10.1088/1742-6596/3027/1/012014-->
+<p>[6] S. Blackburn, "Hume and thick connexions," Philosophy and Phenomenological Research, vol. 50, pp. 237-250, 1990.</p>
+<p>[7] R. Swinburne, "The irreducibility of causation," Dialectica, vol. 51, no. 1, pp. 79-92, 1997.</p>
+<p>[8] R. L. Poidevin, "Time without change (in three steps)," American Philosophical Quarterly, vol. 47, no. 2, pp. 171-180, 2010.</p>
+<p>[9] H. Price, "Backward causation and the direction of causal processes: Reply to dowe," Mind, vol. 105, no. 419, pp. 467- 474, 1996.</p>
+<p>[10] P. S. Churchland and T. J. Sejnowski, The Computational Brain. Computational Neuroscience, Cambridge, MA, US: The MIT Press, 1992.</p>
+<p>[11] Buddha, Patthāna. circa 5th-4th century BCE. Abhidhamma Pitaka, Tripitaka.</p>
+<p>[12] B. Bodhi, The Great Discourse on Causation: The Mahānidāna Sutta and its Commentaries. Kandy, Sri Lanka: Buddhist Publication Society, 1984. Translated from the Pali by Bhikkhu Bodhi.</p>
+<p>[13] K. Sarao, "Patthāna," in Buddhism and Jainism (K. Sarao and J. Long, eds.), Encyclopedia of Indian Religions, Dordrecht: Springer, 2017.</p>
+<p>[14] "Suwisi Pratya: Pattana Prakarana," in Abhidhamma Pitaka, vol. 52-3 of Buddha Jayanthi Tipitaka Series, 2006.</p>
+<p>[15] M. Samarawickrama, "Unifying matter, energy and consciousness," AIP Conference Proceedings, vol. 2872, p. 110001, 09 2023. <a href="https://doi.org/10.1063/5.0162815">https://doi.org/10.1063/5.0162815</a>.</p>
+<p>[16] M. Samarawickrama, "Mathematical modeling of consciousness for unifying causation, relativity and quantum mechanics," Journal of Physics: Conference Series, vol. 2701, p. 012051, 02 2024. <a href="https://doi.org/10.1088/1742-">https://doi.org/10.1088/1742-</a> 6596/2701/1/012051.</p>
+<p>[17] M. Samarawickrama, "Conscious model of particle physics: The grand theory unifying local and non-local realities," Journal of Physics: Conference Series, vol. 2701, p. 012110, 02 2024. <a href="https://doi.org/10.1088/1742-">https://doi.org/10.1088/1742-</a> 6596/2701/1/012110.</p>
+<p>[18] Buddha, Abhidharma. circa 5th-4th century BCE. Abhidhamma Pitaka, Tripitaka.</p>
+<p>[19] Buddhaghosa, The Path of Purification (Visuddhimagga). Kandy, Sri Lanka: Buddhist Publication Society, 1991. Original work published 5th century CE in Sri Lanka. Translated from the Pali by Bhikkhu Nãnamoli.</p>
+<p>[20] B. Bodhi, Comprehensive Manual of Abhidhamma: The Abhidhammattha Sañgaha of Acariya Anuruddha. Buddhist Publication Society, BPS pariyatti PDF ebook edition ed., 2012.</p>
+<p>[21] Buddha, Anattalakkhana Sutta. circa 5th-4th century BCE. Sutta 22.59, Samyutta Nikāya.</p>
+<p>[22] Mahanama, Mahavamsa, ch. 16-23, p. 92. Ceylon Government Information Department, Wilhelm Geiger translation ed., circa 5th-6th century CE. Translation published in 1950 (1912; 1934).</p>
+<p>[23] B. Russell, The Principles of Mathematics, ch. Appendix B: The Doctrine of Types, pp. 523-528. Cambridge: Cambridge University Press, 1903.</p>
+<p>[24] B. Russell, "Introduction to Mathematical Philosophy," Revue Philosophique de la France Et de l'Etranger, vol. 89, pp. 465-466, 1919.</p>
+<p>[25] Buddha, Bāhiya Sutta. circa 5th-4th century BCE. Sutta 1.10, Khuddakanikāya Udāna.</p>
+<p>[26] Buddha, Dhammacakkappavattana Sutta. circa 5th-4th century BCE. Sutta 56.11, Samyutta Nikāya.</p>
+<p>[27] Buddha, Khajjanīya Sutta. circa 5th-4th century BCE. Sutta 22.79, Samyutta Nikāya.</p>
+<!-- Meanless: 8-->
+      </body>
+    </html>
+  
